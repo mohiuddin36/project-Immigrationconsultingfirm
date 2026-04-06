@@ -8,5 +8,8 @@
    <children>
       <Button layoutX="170.0" layoutY="140.0" mnemonicParsing="false" text="Button" />
       <Label layoutX="233.0" layoutY="18.0" prefHeight="26.0" prefWidth="76.0" text="Label" />
+      <Label layoutX="271.0" layoutY="82.0" text="Label" />
+      <Label layoutX="142.0" layoutY="82.0" text="Label" />
+      <Label layoutX="182.0" layoutY="200.0" text="Label" />
    </children>
 </AnchorPane>
