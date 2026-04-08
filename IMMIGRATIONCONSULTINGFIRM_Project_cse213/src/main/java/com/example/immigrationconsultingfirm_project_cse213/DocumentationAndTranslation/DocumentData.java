@@ -2,25 +2,27 @@ package com.example.immigrationconsultingfirm_project_cse213.DocumentationAndTra
 
 public class DocumentData {
 
-    private String event;
-    private String description;
-    private String type;
+    private String fileName;
+    private String fileType;
 
-    public DocumentData(String event, String description, String type) {
-        this.event = event;
-        this.description = description;
-        this.type = type;
+    public DocumentData(String fileName, String fileType) {
+        this.fileName = fileName;
+        this.fileType = fileType;
     }
 
-    public String getEvent() {
-        return event;
+    public String getFileName() {
+        return fileName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getFileType() {
+        return fileType;
     }
 
-    public String getType() {
-        return type;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
     }
 }

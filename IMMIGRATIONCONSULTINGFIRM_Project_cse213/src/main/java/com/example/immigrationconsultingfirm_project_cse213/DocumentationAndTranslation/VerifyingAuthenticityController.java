@@ -3,122 +3,148 @@ package com.example.immigrationconsultingfirm_project_cse213.DocumentationAndTra
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.beans.property.SimpleStringProperty;
 
-public class VerifyingAuthenticityController {
+public class VerifyingAuthenticityController
+{
+    @FXML
+    private TextField inputField;
 
     @FXML
-    private Label titleLabel;
+    private TableColumn<VerifyingDocumentData, String> nameColumn;
 
     @FXML
-    private TextField documentField;
+    private TableColumn<VerifyingDocumentData, String> typeColumn;
+
+    @FXML
+    private TableColumn<VerifyingDocumentData, String> statusColumn;
+
+    @FXML
+    private TableView<VerifyingDocumentData> tableView;
 
     @FXML
     private Label statusLabel;
 
-    @FXML
-    private TableView<DocumentData> tableGoal2;
+    private ObservableList<VerifyingDocumentData> documents = FXCollections.observableArrayList();
 
-    @FXML
-    private TableColumn<DocumentData, String> eventCol;
+    private boolean issueFlag = false;
 
-    @FXML
-    private TableColumn<DocumentData, String> descCol;
-
-    @FXML
-    private TableColumn<DocumentData, String> typeCol;
-
-
-    private boolean documentSelected = false;
 
     @FXML
     public void initialize() {
 
-        statusLabel.setText("Status: Waiting");
+        nameColumn.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getName()));
 
-
-        eventCol.setCellValueFactory(data ->
-                new SimpleStringProperty(data.getValue().getEvent()));
-
-        descCol.setCellValueFactory(data ->
-                new SimpleStringProperty(data.getValue().getDescription()));
-
-        typeCol.setCellValueFactory(data ->
+        typeColumn.setCellValueFactory(data ->
                 new SimpleStringProperty(data.getValue().getType()));
 
+        statusColumn.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getStatus()));
 
-        tableGoal2.getItems().addAll(
-                new DocumentData("event-1", "Select document for verification", "UIE"),
-                new DocumentData("event-2", "Check document clarity (readable or not)", "OP"),
-                new DocumentData("event-3", "Validate document type (passport/certificate)", "UID"),
-                new DocumentData("event-4", "Check all required pages", "OP"),
-                new DocumentData("event-5", "Verify personal information correctness", "DP"),
-                new DocumentData("event-6", "Update verification status", "UID")
-        );
+        statusLabel.setText("Ready for verification");
     }
+
 
     @FXML
-    public void handleSelectDoc(ActionEvent actionEvent) {
+    public void handleSelect(ActionEvent actionEvent) {
 
-        String doc = documentField.getText();
+        String name = inputField.getText();
 
-        if(doc == null || doc.isEmpty()) {
-            statusLabel.setText("Please enter document name");
-            documentSelected = false;
-        } else {
-            documentSelected = true;
-            statusLabel.setText("Document Selected: " + doc);
+        if (name.isEmpty()) {
+            statusLabel.setText("Enter document name");
+            return;
         }
-    }
 
-    private boolean checkDocument() {
-        if(!documentSelected) {
-            statusLabel.setText("Select document first");
-            return false;
+        boolean formatValid = true;
+
+        if (formatValid == true) {
+            documents.clear();
+            documents.add(new VerifyingDocumentData(name, "passport", "Selected"));
+            tableView.setItems(documents);
+
+            statusLabel.setText("Preview opened, format valid");
         }
-        return true;
     }
 
 
     @FXML
     public void handleClarity(ActionEvent actionEvent) {
-        if(checkDocument()) {
-            statusLabel.setText("Document is clear and readable");
+
+        boolean readable = true;
+
+        if (readable == true) {
+            statusLabel.setText("Text readable → Passed");
+        } else {
+            statusLabel.setText("Request new upload");
+            issueFlag = true;
         }
     }
 
 
     @FXML
     public void handleType(ActionEvent actionEvent) {
-        if(checkDocument()) {
-            statusLabel.setText("Valid document type confirmed");
+
+        boolean match = true;
+
+        if (match == true) {
+            statusLabel.setText("Document type valid");
+        } else {
+            statusLabel.setText("Invalid document type");
+            issueFlag = true;
         }
     }
 
 
     @FXML
     public void handlePages(ActionEvent actionEvent) {
-        if(checkDocument()) {
-            statusLabel.setText("All required pages are present");
+
+        int pages = 2;
+        int required = 3;
+
+        if (pages < required) {
+            statusLabel.setText("Missing pages → Incomplete");
+            issueFlag = true;
+        } else {
+            statusLabel.setText("All pages present");
         }
     }
 
 
     @FXML
-    public void handleInfo(ActionEvent actionEvent) {
-        if(checkDocument()) {
-            statusLabel.setText("Information verified successfully");
+    public void handleVerifyInfo(ActionEvent actionEvent) {
+
+        boolean match = true;
+
+        if (match == true) {
+            statusLabel.setText("Client info matched → Valid");
+        } else {
+            statusLabel.setText("Mismatch found");
+            issueFlag = true;
         }
     }
 
 
     @FXML
-    public void handleUpdate(ActionEvent actionEvent) {
-        if(checkDocument()) {
-            statusLabel.setText("Verification Completed");
+    public void handleFlag(ActionEvent actionEvent) {
+
+        if (issueFlag == true) {
+            statusLabel.setText("Issue Flag = TRUE");
+        } else {
+            statusLabel.setText("No issues found");
+        }
+    }
+
+
+    @FXML
+    public void handleUpdateStatus(ActionEvent actionEvent) {
+
+        if (issueFlag == true) {
+            statusLabel.setText("Status: Rejected");
+        } else {
+            statusLabel.setText("Status: Verified");
         }
     }
 }
-
-
-

@@ -1,5 +1,7 @@
 package com.example.immigrationconsultingfirm_project_cse213.DocumentationAndTranslation;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -7,52 +9,33 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class ReceivingAndOrganizingController {
 
-    @FXML
-    private TextField usernameField;
-    @FXML
-    private TextField passwordTF;
-    @FXML
-    private Label statusLabel;
-    @FXML
-    private Label titleLabel;
+    @FXML private TextField usernameField;
+    @FXML private TextField passwordField;
+    @FXML private TextField searchField;
 
-    @FXML
-    private TableView<DocumentData> tableGoal1;
-    @FXML
-    private TableColumn<DocumentData, String> eventCol;
-    @FXML
-    private TableColumn<DocumentData, String> descCol;
-    @FXML
-    private TableColumn<DocumentData, String> typeCol;
+    @FXML private Label statusLabel;
+    @FXML private Label titleLabel;
 
+    @FXML private TableView<DocumentData> tableView;
+    @FXML private TableColumn<DocumentData, String> fileNameColumn;
+    @FXML private TableColumn<DocumentData, String> fileTypeColumn;
 
     private boolean isLoggedIn = false;
+
+    private ObservableList<DocumentData> documents = FXCollections.observableArrayList();
+
 
     @FXML
     public void initialize() {
 
-
         statusLabel.setText("Status: Not Logged In");
 
-        // Connect table columns with model
-        eventCol.setCellValueFactory(data ->
-                new SimpleStringProperty(data.getValue().getEvent()));
 
-        descCol.setCellValueFactory(data ->
-                new SimpleStringProperty(data.getValue().getDescription()));
+        fileNameColumn.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getFileName()));
 
-        typeCol.setCellValueFactory(data ->
-                new SimpleStringProperty(data.getValue().getType()));
-
-        // Add data (same as your image)
-        tableGoal1.getItems().addAll(
-                new DocumentData("event-1", "Access client case (login required)", "UIE"),
-                new DocumentData("event-2", "View uploaded documents", "OP"),
-                new DocumentData("event-3", "Download document (if exists)", "UIE"),
-                new DocumentData("event-4", "Categorize (passport/certificate)", "UID"),
-                new DocumentData("event-5", "Rename (avoid duplicate names)", "DP"),
-                new DocumentData("event-6", "Update status to completed", "UID")
-        );
+        fileTypeColumn.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getFileType()));
     }
 
 
@@ -60,7 +43,7 @@ public class ReceivingAndOrganizingController {
     public void handleLogin(ActionEvent actionEvent) {
 
         String user = usernameField.getText();
-        String pass = passwordTF.getText();
+        String pass = passwordField.getText();
 
         if(user.equals("admin") && pass.equals("123")) {
             isLoggedIn = true;
@@ -82,41 +65,104 @@ public class ReceivingAndOrganizingController {
 
 
     @FXML
+    public void handleAccess(ActionEvent actionEvent) {
+
+        if(isLoggedIn == true) {
+            documents.clear();
+
+            documents.add(new DocumentData("passport1", "passport"));
+            documents.add(new DocumentData("certificate1", "certificate"));
+
+            tableView.setItems(documents);
+
+            statusLabel.setText("Client files loaded");
+        } else {
+            statusLabel.setText("Access Denied");
+        }
+    }
+
+
+    @FXML
     public void handleView(ActionEvent actionEvent) {
         if(checkLogin()) {
-            statusLabel.setText("Viewing documents...");
+            tableView.setItems(documents);
+            statusLabel.setText("Viewing documents");
         }
     }
 
 
     @FXML
     public void handleDownload(ActionEvent actionEvent) {
-        if(checkLogin()) {
-            statusLabel.setText("Downloading document...");
+
+        if(!checkLogin()) return;
+
+        String search = searchField.getText();
+        boolean found = false;
+
+        for(DocumentData doc : documents) {
+            if(doc.getFileName().equals(search)) {
+                found = true;
+                break;
+            }
+        }
+
+        if(found == true) {
+            statusLabel.setText("Download successful");
+        } else {
+            statusLabel.setText("Error: File not found");
         }
     }
 
 
     @FXML
     public void handleCategorize(ActionEvent actionEvent) {
-        if(checkLogin()) {
-            statusLabel.setText("Categorizing documents...");
+
+        if(!checkLogin()) return;
+
+        for(DocumentData doc : documents) {
+
+            if(doc.getFileType().equals("passport")) {
+                statusLabel.setText("Stored in passport folder");
+            }
+            else if(doc.getFileType().equals("certificate")) {
+                statusLabel.setText("Stored in education folder");
+            }
         }
     }
 
 
     @FXML
     public void handleRename(ActionEvent actionEvent) {
-        if(checkLogin()) {
-            statusLabel.setText("Renaming document...");
+
+        if(!checkLogin()) return;
+
+        for(int i = 0; i < documents.size(); i++) {
+            DocumentData doc = documents.get(i);
+            int count = 1;
+
+            for(int j = 0; j < documents.size(); j++) {
+
+                if(i != j &&
+                        documents.get(j).getFileName().equals(doc.getFileName())) {
+
+                    while(documents.get(j).getFileName().equals(doc.getFileName())) {
+                        doc.setFileName(doc.getFileName() + count);
+                        count++;
+                    }
+                }
+            }
         }
+
+        tableView.refresh();
+        statusLabel.setText("Renaming completed");
     }
 
 
     @FXML
-    public void handleUpdate(ActionEvent actionEvent) {
-        if(checkLogin()) {
-            statusLabel.setText("Status Updated to Completed");
-        }
+    public void handleUpdateStatus(ActionEvent actionEvent) {
+
+        if(!checkLogin()) return;
+
+        statusLabel.setText("Status: Completed");
     }
 }
