@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Controller.ClientCommunication">
    <children>
       <Text layoutX="233.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client Communication" />
