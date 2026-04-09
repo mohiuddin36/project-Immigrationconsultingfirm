@@ -3,27 +3,27 @@ package com.example.immigrationconsultingfirm_project_cse213.Immegration_Consult
 import java.io.Serializable;
 
 public class ClientCommunication  implements Serializable {
-    protected String responseDraft,username;
+    protected String username;
     protected int id;
 
-    public String getResponseDraft() {
-        return responseDraft;
+    public String getUsername() {
+        return username;
     }
 
-    public void setResponseDraft(String responseDraft) {
-        this.responseDraft = responseDraft;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public ClientCommunication(String responseDraft) {
-        this.responseDraft = responseDraft;
+    public ClientCommunication(String username) {
+        this.username = username;
     }
 
     @Override
     public String toString() {
         return "ClientCommunication{" +
-                "responseDraft='" + responseDraft + '\'' +
-                ", username='" + username + '\'' +
+                "username='" + username + '\'' +
                 ", id=" + id +
                 '}';
     }
 }
+

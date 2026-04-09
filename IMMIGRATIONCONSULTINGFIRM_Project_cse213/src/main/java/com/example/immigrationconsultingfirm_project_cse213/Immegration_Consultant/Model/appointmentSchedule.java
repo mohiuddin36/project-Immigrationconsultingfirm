@@ -1,29 +1,32 @@
 package com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class appointmentSchedule implements Serializable {
     //Input date, time, and appointment type (Interview/Prep)
-    protected String appointmentDate,appointmentType,appointmentTime;
+    protected String appointmentType,appointmentTime;
+    protected LocalDate appointmentDate;
 
-    public String getAppointmentDate() {
-        return appointmentDate;
+    public String getAppointmentType() {
+        return appointmentType;
     }
 
-    public void setAppointmentDate(String appointmentDate) {
-        this.appointmentDate = appointmentDate;
+    public void setAppointmentType(String appointmentType) {
+        this.appointmentType = appointmentType;
     }
 
-    public appointmentSchedule(String appointmentDate) {
-        this.appointmentDate = appointmentDate;
+    public appointmentSchedule(String appointmentType) {
+        this.appointmentType = appointmentType;
     }
 
     @Override
     public String toString() {
         return "appointmentSchedule{" +
-                "appointmentDate='" + appointmentDate + '\'' +
-                ", appointmentType='" + appointmentType + '\'' +
+                "appointmentType='" + appointmentType + '\'' +
                 ", appointmentTime='" + appointmentTime + '\'' +
+                ", appointmentDate=" + appointmentDate +
                 '}';
     }
 }
+
