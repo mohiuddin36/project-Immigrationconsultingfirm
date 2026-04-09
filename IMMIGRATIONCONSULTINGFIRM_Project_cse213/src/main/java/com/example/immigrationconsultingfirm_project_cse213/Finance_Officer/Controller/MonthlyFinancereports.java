@@ -1,4 +1,4 @@
-package com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Controller;
+package com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller;
 
 import javafx.event.ActionEvent;
 

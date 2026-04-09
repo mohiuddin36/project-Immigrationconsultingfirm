@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Controller.MonthlyFinancereports">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller.MonthlyFinancereports">
    <children>
       <Text layoutX="81.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fees" />
       <Text layoutX="45.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operatinal cost" />
