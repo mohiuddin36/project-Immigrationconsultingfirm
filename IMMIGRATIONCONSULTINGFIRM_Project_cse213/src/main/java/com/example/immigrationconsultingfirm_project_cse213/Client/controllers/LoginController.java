@@ -1,4 +1,4 @@
-package com.example.immigrationconsultingfirm_project_cse213.Client;
+package com.example.immigrationconsultingfirm_project_cse213.Client.controllers;
 
 public class LoginController
 {
