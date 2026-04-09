@@ -4,19 +4,19 @@ import java.io.Serializable;
 
 public class ClientAssessment implements Serializable {
     //Input scores (IELTS/TEF), Education (ECA), and Work Experience.
-    protected double ieltsScore;
+    protected int ieltsScore;
     protected String educationECA;
     protected int workExperience;
 
-    public double getIeltsScore() {
+    public int getIeltsScore() {
         return ieltsScore;
     }
 
-    public void setIeltsScore(double ieltsScore) {
+    public void setIeltsScore(int ieltsScore) {
         this.ieltsScore = ieltsScore;
     }
 
-    public ClientAssessment(double ieltsScore) {
+    public ClientAssessment(int ieltsScore) {
         this.ieltsScore = ieltsScore;
     }
 
@@ -29,3 +29,5 @@ public class ClientAssessment implements Serializable {
                 '}';
     }
 }
+
+
