@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="750.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.immigrationconsultingfirm_project_cse213.DocumentationAndTranslation.TerminologyAccuracyController">
+
+    <Label layoutX="200.0" layoutY="10.0" prefWidth="350.0" alignment="CENTER"
+           text="Ensure Terminology Accuracy">
+        <font>
+            <Font size="18"/>
+        </font>
+    </Label>
+
+    <TableView fx:id="tableView" layoutX="20.0" layoutY="50.0" prefWidth="500.0" prefHeight="250.0">
+        <columns>
+            <TableColumn fx:id="docNameColumn" text="Document Name" prefWidth="200"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="150"/>
+            <TableColumn fx:id="termColumn" text="Term Accuracy" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <TextArea fx:id="reviewArea" layoutX="20.0" layoutY="310.0" prefWidth="500.0" prefHeight="150.0"
+              promptText="Review document and terminology"/>
+
+    <Label fx:id="statusLabel" layoutX="20.0" layoutY="470.0" prefWidth="500.0" text="Status: Ready"/>
+
+    <Button layoutX="540.0" layoutY="50.0" prefWidth="180.0" text="Review Terminology"
+            onAction="#handleReviewTerminology"/>
+
+    <Button layoutX="540.0" layoutY="90.0" prefWidth="180.0" text="Verify Official Terms"
+            onAction="#handleVerifyTerms"/>
+
+    <Button layoutX="540.0" layoutY="130.0" prefWidth="180.0" text="Check Layout"
+            onAction="#handleCheckLayout"/>
+
+    <Button layoutX="540.0" layoutY="170.0" prefWidth="180.0" text="Validate Stamps"
+            onAction="#handleValidateStamps"/>
+
+    <Button layoutX="540.0" layoutY="210.0" prefWidth="180.0" text="Correct Formatting"
+            onAction="#handleCorrectFormatting"/>
+
+    <Button layoutX="540.0" layoutY="250.0" prefWidth="180.0" text="Approve Document"
+            onAction="#handleApproveDocument"/>
+
+    <Button layoutX="540.0" layoutY="290.0" prefWidth="180.0" text="Save Document"
+            onAction="#handleSaveDocument"/>
+
+</AnchorPane>

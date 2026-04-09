@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.AppointmentCoordinator.CancelAppoinment">
+   <children>
+      <Button layoutX="170.0" layoutY="140.0" mnemonicParsing="false" text="Button" />
+      <Label layoutX="233.0" layoutY="18.0" prefHeight="26.0" prefWidth="76.0" text="Label" />
+      <Label layoutX="271.0" layoutY="82.0" text="Label" />
+      <Label layoutX="142.0" layoutY="82.0" text="Label" />
+      <Label layoutX="182.0" layoutY="200.0" text="Label" />
+      <ComboBox layoutX="408.0" layoutY="187.0" prefWidth="150.0" />
+      <TextField layoutX="170.0" layoutY="253.0" />
+      <TextField layoutX="159.0" layoutY="302.0" />
+      <TextField layoutX="14.0" layoutY="205.0" />
+      <TextField layoutX="409.0" layoutY="70.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.DocumentationAndTranslation.RiskReductionController">
+
+    <Label alignment="CENTER" layoutX="180.0" layoutY="10.0" prefHeight="30.0" prefWidth="340.0" text="Reduce Documentation Risks">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+
+    <TextArea fx:id="messageArea" layoutX="30.0" layoutY="60.0" prefHeight="72.0" prefWidth="400.0" promptText="Messages / Notes" />
+
+    <Label fx:id="statusLabel" layoutX="30.0" layoutY="417.0" prefHeight="36.0" prefWidth="500.0" text="Status" />
+
+    <TableView fx:id="tableView" layoutX="30.0" layoutY="148.0" prefHeight="250.0" prefWidth="500.0">
+        <columns>
+            <TableColumn fx:id="docNameColumn" prefWidth="200.0" text="Document Name" />
+            <TableColumn fx:id="statusColumn" prefWidth="150.0" text="Status" />
+            <TableColumn fx:id="riskLevelColumn" prefWidth="150.0" text="Risk Level" />
+        </columns>
+    </TableView>
+
+    <Button layoutX="550.0" layoutY="60.0" onAction="#handleScanDocuments" prefWidth="120.0" text="Scan Documents" />
+    <Button layoutX="550.0" layoutY="100.0" onAction="#handleIdentifyRisks" prefWidth="120.0" text="Identify Risks" />
+    <Button layoutX="550.0" layoutY="140.0" onAction="#handleFlagDocuments" prefWidth="120.0" text="Flag Documents" />
+    <Button layoutX="550.0" layoutY="180.0" onAction="#handleRequestCorrections" prefWidth="120.0" text="Request Corrections" />
+    <Button layoutX="550.0" layoutY="220.0" onAction="#handleWaitForUpload" prefWidth="120.0" text="Wait for Upload" />
+    <Button layoutX="550.0" layoutY="260.0" onAction="#handleRecheckDocument" prefWidth="120.0" text="Re-check Document" />
+    <Button layoutX="550.0" layoutY="300.0" onAction="#handleApproveDocument" prefWidth="120.0" text="Approve Document" />
+
+</AnchorPane>

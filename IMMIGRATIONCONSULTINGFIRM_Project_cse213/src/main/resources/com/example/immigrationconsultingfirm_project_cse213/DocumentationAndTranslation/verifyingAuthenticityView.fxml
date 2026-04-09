@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="900" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/fxml" fx:controller="com.example.immigrationconsultingfirm_project_cse213.DocumentationAndTranslation.VerifyingAuthenticityController">
+<AnchorPane prefHeight="489.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.DocumentationAndTranslation.VerifyingAuthenticityController">
 
+    <!-- TITLE -->
+    <Label alignment="CENTER" layoutX="162.0" layoutY="14.0" prefHeight="17.0" prefWidth="334.0" text="Verify Document Authenticity">
+      <font>
+         <Font size="18.0" />
+      </font></Label>
 
-<Label layoutX="250" layoutY="10"
-       text="Goal 2: Verify Document Authenticity"
-       fx:id="titleLabel"/>
+    <!-- INPUT FIELD -->
+    <TextField fx:id="inputField" layoutX="34.0" layoutY="63.0" promptText="Enter document name" />
 
+    <!-- STATUS -->
+    <Label fx:id="statusLabel" layoutX="201.0" layoutY="63.0" prefHeight="25.0" prefWidth="180.0" text="Status" />
 
-<Label layoutX="50" layoutY="50" text="Document Name:"/>
-<TextField layoutX="170" layoutY="45" fx:id="documentField"/>
+    <!-- TABLE -->
+    <TableView fx:id="tableView" layoutX="27.0" layoutY="112.0" prefHeight="250" prefWidth="514.0">
 
-<Button layoutX="350" layoutY="45"
-        text="Select Document"
-        onAction="#handleSelectDoc"/>
+        <columns>
+            <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="179.0" text="Document Name" />
+            <TableColumn fx:id="typeColumn" prefWidth="171.0" text="Type" />
+            <TableColumn fx:id="statusColumn" prefWidth="200" text="Status" />
+        </columns>
 
+    </TableView>
 
-<Label layoutX="50" layoutY="90"
-       text="Status: Waiting"
-       fx:id="statusLabel"/>
+    <!-- BUTTONS -->
 
+    <!-- Event 1 -->
+    <Button layoutX="561.0" layoutY="134.0" onAction="#handleSelect" text="Select Document" />
 
-<TableView fx:id="tableGoal2"
-           layoutX="50" layoutY="130"
-           prefWidth="800" prefHeight="250">
+    <!-- Event 2 -->
+    <Button layoutX="573.0" layoutY="167.0" onAction="#handleClarity" text="Check Clarity" />
 
-    <columns>
-        <TableColumn fx:id="eventCol" text="Event" prefWidth="100"/>
-        <TableColumn fx:id="descCol" text="Description" prefWidth="500"/>
-        <TableColumn fx:id="typeCol" text="Type" prefWidth="200"/>
-    </columns>
-</TableView>
+    <!-- Event 3 -->
+    <Button layoutX="570.0" layoutY="199.0" onAction="#handleType" text="Validate Type" />
 
+    <!-- Event 4 -->
+    <Button layoutX="573.0" layoutY="294.0" onAction="#handlePages" text="Check Pages" />
 
-<Button layoutX="50" layoutY="420"
-        text="Check Clarity"
-        onAction="#handleClarity"/>
+    <!-- Event 5 -->
+    <Button layoutX="579.0" layoutY="232.0" onAction="#handleVerifyInfo" text="Verify Info" />
 
-<Button layoutX="170" layoutY="420"
-        text="Validate Type"
-        onAction="#handleType"/>
+    <!-- Event 6 -->
+    <Button layoutX="578.0" layoutY="263.0" onAction="#handleFlag" text="Flag Issues" />
 
-<Button layoutX="300" layoutY="420"
-        text="Check Pages"
-        onAction="#handlePages"/>
-
-<Button layoutX="430" layoutY="420"
-        text="Verify Info"
-        onAction="#handleInfo"/>
-
-<Button layoutX="560" layoutY="420"
-        text="Update Status"
-        onAction="#handleUpdate"/>
+    <!-- Event 7 -->
+    <Button layoutX="249.0" layoutY="393.0" onAction="#handleUpdateStatus" prefHeight="42.0" prefWidth="134.0" text="Update Status" />
 
 </AnchorPane>
