@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class PaymentBreakdown  implements Serializable {
     //Choose Client ID and application stream (Express Entry, Study Permit).
     protected int clientId;
-    protected String applicationStream;
+    protected String name,applicationStream;
 
     public int getClientId() {
         return clientId;
@@ -23,6 +23,7 @@ public class PaymentBreakdown  implements Serializable {
     public String toString() {
         return "PaymentBreakdown{" +
                 "clientId=" + clientId +
+                ", name='" + name + '\'' +
                 ", applicationStream='" + applicationStream + '\'' +
                 '}';
     }

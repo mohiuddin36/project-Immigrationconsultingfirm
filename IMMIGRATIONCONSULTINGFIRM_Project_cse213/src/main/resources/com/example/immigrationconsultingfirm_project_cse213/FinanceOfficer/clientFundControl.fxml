@@ -6,18 +6,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Controller.ClientFundConteol">
    <children>
-      <Text layoutX="205.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client Fund Control" wrappingWidth="126.936767578125" />
-      <Text layoutX="34.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Client Id" />
+      <Text layoutX="213.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client Fund Control" wrappingWidth="126.936767578125" />
+      <Text layoutX="57.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Client Id" />
       <Text layoutX="63.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <TextField fx:id="idTextfield" layoutX="103.0" layoutY="108.0" />
-      <Text layoutX="58.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Transaction date" />
-      <Button layoutX="77.0" layoutY="251.0" mnemonicParsing="false" onAction="#saveButton" text="Save Record" />
+      <TextField fx:id="idTextfield" layoutX="138.0" layoutY="117.0" />
+      <Text layoutX="32.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Transaction date" />
+      <Button layoutX="57.0" layoutY="298.0" mnemonicParsing="false" onAction="#saveButton" text="Save Record" />
       <Button layoutX="433.0" layoutY="311.0" mnemonicParsing="false" onAction="#backButton" text="Back to Dashboard" />
-      <DatePicker fx:id="transactionDatePicker" layoutX="165.0" layoutY="165.0" />
-      <Text layoutX="34.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Name" />
-      <TextField fx:id="nameTextfield" layoutX="103.0" layoutY="63.0" />
+      <DatePicker fx:id="transactionDatePicker" layoutX="131.0" layoutY="165.0" />
+      <Text layoutX="63.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Name" />
+      <TextField fx:id="nameTextfield" layoutX="138.0" layoutY="72.0" />
    </children>
 </AnchorPane>

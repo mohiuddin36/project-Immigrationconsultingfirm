@@ -5,10 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Controller.ClientProfilesController">
    <children>
-      <Text layoutX="107.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter client personal data, passport details, and contact info." wrappingWidth="419.73675537109375" />
+      <Text layoutX="253.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client Profile" wrappingWidth="93.3367919921875" />
       <Text layoutX="31.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
       <TextField fx:id="nameTextfield" layoutX="100.0" layoutY="56.0" />
       <Text layoutX="31.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
