@@ -1,4 +1,4 @@
-package com.example.immigrationconsultingfirm_project_cse213.Finance_Officer;
+package com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller;
 
 import com.example.immigrationconsultingfirm_project_cse213.HelloApplication;
 import javafx.event.ActionEvent;

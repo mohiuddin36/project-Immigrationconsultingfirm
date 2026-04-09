@@ -1,4 +1,4 @@
-package com.example.immigrationconsultingfirm_project_cse213.Finance_Officer;
+package com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Model;
 
 import java.io.Serializable;
 

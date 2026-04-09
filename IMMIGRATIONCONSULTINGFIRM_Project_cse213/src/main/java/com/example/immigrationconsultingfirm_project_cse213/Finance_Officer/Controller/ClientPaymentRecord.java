@@ -1,5 +1,7 @@
-package com.example.immigrationconsultingfirm_project_cse213.Finance_Officer;
+package com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller;
 
+import com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Model.AppendableObjectOutputStream;
+import com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.PaymentRecord;
 import com.example.immigrationconsultingfirm_project_cse213.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
