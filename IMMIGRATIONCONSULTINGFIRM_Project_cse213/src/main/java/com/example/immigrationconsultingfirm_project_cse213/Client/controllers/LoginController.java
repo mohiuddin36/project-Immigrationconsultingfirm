@@ -1,7 +1,44 @@
 package com.example.immigrationconsultingfirm_project_cse213.Client.controllers;
 
-public class LoginController
-{
-    @javafx.fxml.FXML
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
+public class LoginController {
+
+    @FXML
+    private TextField usernameTextField;
+
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private Label messageLabel;
+
+    @FXML
     public void initialize() {
-    }}
+        messageLabel.setText("");
+    }
+
+    @FXML
+    public void loginOnClickButton(ActionEvent actionEvent) {
+
+        String username = usernameTextField.getText();
+        String password = passwordField.getText();
+
+        // Validation
+        if (username.isEmpty() || password.isEmpty()) {
+            messageLabel.setText("Please enter username and password!");
+            return;
+        }
+
+        // Dummy login check
+        if (username.equals("admin") && password.equals("1234")) {
+            messageLabel.setText("Login Successful!");
+        } else {
+            messageLabel.setText("Invalid Username or Password!");
+        }
+    }
+}
