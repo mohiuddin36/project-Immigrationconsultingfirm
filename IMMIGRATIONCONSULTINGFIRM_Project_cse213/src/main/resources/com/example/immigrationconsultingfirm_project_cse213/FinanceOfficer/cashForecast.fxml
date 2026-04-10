@@ -14,7 +14,7 @@
       <Text layoutX="31.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Application deadline" />
       <Button layoutX="59.0" layoutY="307.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
       <Button layoutX="456.0" layoutY="333.0" mnemonicParsing="false" onAction="#backbutton" text="Back to Dashboard" />
-      <TextField fx:id="userNameTaxtfield" layoutX="175.0" layoutY="91.0" />
+      <TextField fx:id="userNametextfield" layoutX="175.0" layoutY="91.0" />
       <TextField fx:id="passwordTextField" layoutX="175.0" layoutY="128.0" />
       <DatePicker fx:id="applicationDeadlineTextField" layoutX="163.0" layoutY="169.0" />
    </children>

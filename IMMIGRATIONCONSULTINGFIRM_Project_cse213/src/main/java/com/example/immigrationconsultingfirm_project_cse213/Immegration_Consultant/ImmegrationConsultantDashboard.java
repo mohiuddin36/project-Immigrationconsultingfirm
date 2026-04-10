@@ -15,9 +15,9 @@ public class ImmegrationConsultantDashboard
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void applicationsubmission(ActionEvent actionEvent)throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/paymentBreakdown.fxml"));
+    @Deprecated
+    public void applicationSubmission(ActionEvent actionEvent)throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immigration/applicationSubmission-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Payment Breakdown");
@@ -25,9 +25,9 @@ public class ImmegrationConsultantDashboard
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void documentsVerification(ActionEvent actionEvent) throws IOException  {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration/documentVerification-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immigration/documentVerification-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Documents Verification");
@@ -37,7 +37,7 @@ public class ImmegrationConsultantDashboard
 
     @javafx.fxml.FXML
     public void clientProfileButton(ActionEvent actionEvent) throws IOException  {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration/clientProfiles-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immigration/clientProfiles-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("client Profile");
@@ -47,7 +47,7 @@ public class ImmegrationConsultantDashboard
 
     @javafx.fxml.FXML
     public void appoinmentScheduleButton(ActionEvent actionEvent)throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration/appoinmentSchedule-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immigration/appointmentSchedule-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Appointment Schedule");
@@ -57,7 +57,7 @@ public class ImmegrationConsultantDashboard
 
     @javafx.fxml.FXML
     public void updateMilestonesButton(ActionEvent actionEvent) throws IOException  {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration/milestoneUpdate.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immigration/milestoneUpdate.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Milestone Update");
@@ -67,7 +67,7 @@ public class ImmegrationConsultantDashboard
 
     @javafx.fxml.FXML
     public void clientAssessmentButton(ActionEvent actionEvent) throws IOException  {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration/clientAssessment-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immigration/clientAssessment-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Client Assessment");
@@ -77,7 +77,7 @@ public class ImmegrationConsultantDashboard
 
     @javafx.fxml.FXML
     public void generateBillingButton(ActionEvent actionEvent)  throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration/adminResponsibilities-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immigration/adminResponsibilities-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Admin Responsibilities");
@@ -87,11 +87,13 @@ public class ImmegrationConsultantDashboard
 
     @javafx.fxml.FXML
     public void communicationLogButton(ActionEvent actionEvent)  throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration/clientCommunication-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immigration/clientCommunication-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Client communication");
         stage.setScene(scene);
         stage.show();
     }
+
+
 }

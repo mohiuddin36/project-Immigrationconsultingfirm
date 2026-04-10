@@ -41,7 +41,7 @@ public class ClientProfilesController
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration Consultant/immegrationConsultantDashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Client Profile");
+        stage.setTitle("Immigration Consultant Dashboard");
         stage.setScene(scene);
         stage.show();
     }

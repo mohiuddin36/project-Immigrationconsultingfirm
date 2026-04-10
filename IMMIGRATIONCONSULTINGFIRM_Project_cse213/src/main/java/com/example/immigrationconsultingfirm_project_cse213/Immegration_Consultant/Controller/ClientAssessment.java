@@ -37,18 +37,18 @@ public class ClientAssessment
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration Consultant/immegrationConsultantDashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Client Assessement");
+        stage.setTitle("Immigration Consultant Dashboard");
         stage.setScene(scene);
         stage.show();
     }
 
     @javafx.fxml.FXML
-    ClientAssessment ca = new ClientAssessment(
-            //Integer.parseInt(ieltsScoreTextField.getText()),
-            //ducationTextField.getText(),
-            //Integer.parseInt(workExperienceTextfield.getText())
-    );
-
+    public void saveButton(ActionEvent actionEvent) {
+        ClientAssessment ca = new ClientAssessment(
+                //Integer.parseInt(ieltsScoreTextField.getText()),
+                //educationTextField.getText(),
+                //Integer.parseInt(workExperienceTextField.getText())
+        );
         try {
             File file = new File("ClientAssessment.bin");
             FileOutputStream fos;
@@ -63,10 +63,10 @@ public class ClientAssessment
             }
             oos.writeObject(ca);
             oos.close();
-            informationAlert("Assessment added successfully!");
+            informationAlert("Added successfully!");
 
         } catch (Exception e) {
-            errorAlert("Error saving assessment data!");
+            errorAlert("Error saving data to file!");
         }
 
     }
@@ -81,6 +81,12 @@ public class ClientAssessment
         a.showAndWait();
     }
 
-
 }
+
+
+
+
+
+
+
 

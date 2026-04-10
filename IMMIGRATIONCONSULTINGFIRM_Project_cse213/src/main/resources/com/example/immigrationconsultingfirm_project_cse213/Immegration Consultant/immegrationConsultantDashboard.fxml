@@ -7,8 +7,8 @@
    <children>
       <Button layoutX="58.0" layoutY="31.0" mnemonicParsing="false" onAction="#clientProfileButton" text="Client Profiles" />
       <Button layoutX="58.0" layoutY="75.0" mnemonicParsing="false" onAction="#clientAssessmentButton" text="Client Assessment" />
-      <Button layoutX="58.0" layoutY="115.0" mnemonicParsing="false" onAction="#documentsVerification" text="Documents Verification" />
-      <Button layoutX="58.0" layoutY="158.0" mnemonicParsing="false" onAction="#applicationsubmission" text="Application Submission" />
+      <Button layoutX="58.0" layoutY="115.0" mnemonicParsing="false" onAction="#documentsVerificationButton" text="Documents Verification" />
+      <Button layoutX="58.0" layoutY="158.0" mnemonicParsing="false" onAction="#applicationsubmissionButton" text="Application Submission" />
       <Button layoutX="58.0" layoutY="200.0" mnemonicParsing="false" onAction="#updateMilestonesButton" text="Update Milestones" />
       <Button layoutX="58.0" layoutY="255.0" mnemonicParsing="false" onAction="#appoinmentScheduleButton" text="Appointment Schedule" />
       <Button layoutX="58.0" layoutY="304.0" mnemonicParsing="false" onAction="#communicationLogButton" text="Communication Log" />
