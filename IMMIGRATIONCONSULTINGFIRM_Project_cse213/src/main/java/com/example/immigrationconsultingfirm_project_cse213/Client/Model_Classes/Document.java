@@ -1,42 +1,57 @@
 package com.example.immigrationconsultingfirm_project_cse213.Client.Model_Classes;
 
 public class Document {
-    private final String docId;   // immutable
-    private String docType;
-    private boolean verified;
+    private String documentType;
+    private String fileName;
+    private String uploadDate;
+    private String status;
 
-    public Document(String docId, String docType) {
-        this.docId = docId;
-        this.docType = docType;
-        this.verified = false; // default not verified
+    public Document(String documentType, String fileName, String uploadDate, String status) {
+        this.documentType = documentType;
+        this.fileName = fileName;
+        this.uploadDate = uploadDate;
+        this.status = status;
     }
 
-    public String getDocId() {
-        return docId;
+    public String getDocumentType() {
+        return documentType;
     }
 
-    public String getDocType() {
-        return docType;
+    public String getFileName() {
+        return fileName;
     }
 
-    public boolean isVerified() {
-        return verified;
+    public String getUploadDate() {
+        return uploadDate;
     }
 
-    public void setDocType(String docType) {
-        this.docType = docType;
+    public String getStatus() {
+        return status;
     }
 
-    public void setVerified(boolean verified) {
-        this.verified = verified;
+    public void setDocumentType(String documentType) {
+        this.documentType = documentType;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public void setUploadDate(String uploadDate) {
+        this.uploadDate = uploadDate;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
     public String toString() {
         return "Document{" +
-                "docId='" + docId + '\'' +
-                ", docType='" + docType + '\'' +
-                ", verified=" + verified +
+                "documentType='" + documentType + '\'' +
+                ", fileName='" + fileName + '\'' +
+                ", uploadDate='" + uploadDate + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
