@@ -2,11 +2,13 @@ package com.example.immigrationconsultingfirm_project_cse213.Client.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class RegisterController {
+
     @FXML private TextField PassportNumTextField;
     @FXML private TextField FullnameTextField;
     @FXML private PasswordField ConfirmPasswordField;
@@ -17,8 +19,8 @@ public class RegisterController {
 
     @FXML
     public void initialize() {
-        // Default setup
-        messageLabel.setText(""); // start e blank rakha
+        messageLabel.setText("");
+
         FullnameTextField.setPromptText("Enter full name");
         EmailTextField.setPromptText("Enter email");
         PhoneNumTextField.setPromptText("Enter phone number");
@@ -29,6 +31,7 @@ public class RegisterController {
 
     @FXML
     public void RegisterOnClickButton(ActionEvent actionEvent) {
+
         String fullname = FullnameTextField.getText();
         String email = EmailTextField.getText();
         String phone = PhoneNumTextField.getText();
@@ -36,35 +39,50 @@ public class RegisterController {
         String pass = PasswordField.getText();
         String confirm = ConfirmPasswordField.getText();
 
-        // Empty field check
-        if(fullname.isEmpty() || email.isEmpty() || phone.isEmpty() || passport.isEmpty() || pass.isEmpty() || confirm.isEmpty()) {
-            messageLabel.setText("Please fill all fields.");
+        if (fullname.isEmpty() || email.isEmpty() || phone.isEmpty()
+                || passport.isEmpty() || pass.isEmpty() || confirm.isEmpty()) {
+
+            showAlert("Error", "Please fill all fields!", Alert.AlertType.ERROR);
+            return;
         }
-        // Email format check
-        else if(!email.contains("@") || !email.contains(".")) {
-            messageLabel.setText("Invalid email format.");
+
+        if (!email.contains("@") || !email.contains(".")) {
+            showAlert("Error", "Invalid email format!", Alert.AlertType.ERROR);
+            return;
         }
-        // Phone digits only check
-        else if(!phone.matches("\\d+")) {
-            messageLabel.setText("Phone number must contain digits only.");
+
+        if (!phone.matches("\\d+")) {
+            showAlert("Error", "Phone number must contain digits only!", Alert.AlertType.ERROR);
+            return;
         }
-        // Password length check
-        else if(pass.length() < 6) {
-            messageLabel.setText("Password must be at least 6 characters.");
+
+        if (pass.length() < 6) {
+            showAlert("Error", "Password must be at least 6 characters!", Alert.AlertType.ERROR);
+            return;
         }
-        // Password match check
-        else if(!pass.equals(confirm)) {
-            messageLabel.setText("Passwords do not match.");
+
+        if (!pass.equals(confirm)) {
+            showAlert("Error", "Passwords do not match!", Alert.AlertType.ERROR);
+            return;
         }
-        else {
-            messageLabel.setText("Registration Successful!");
-            // TODO: save user info to file or database here
-            FullnameTextField.clear();
-            EmailTextField.clear();
-            PhoneNumTextField.clear();
-            PassportNumTextField.clear();
-            PasswordField.clear();
-            ConfirmPasswordField.clear();
-        }
+
+        // SUCCESS
+        showAlert("Success", "Registration Successful!", Alert.AlertType.INFORMATION);
+        messageLabel.setText("Registered Successfully!");
+
+        FullnameTextField.clear();
+        EmailTextField.clear();
+        PhoneNumTextField.clear();
+        PassportNumTextField.clear();
+        PasswordField.clear();
+        ConfirmPasswordField.clear();
+    }
+
+    private void showAlert(String title, String message, Alert.AlertType type) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

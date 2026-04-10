@@ -91,6 +91,5 @@ public class DocumentsVerification
         a.setContentText(s);
         a.showAndWait();
     }
-    }
 
 }
