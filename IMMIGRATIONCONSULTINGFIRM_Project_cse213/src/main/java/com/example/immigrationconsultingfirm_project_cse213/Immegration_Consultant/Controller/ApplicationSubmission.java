@@ -1,5 +1,6 @@
 package com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Controller;
 
+import com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Model.AppendableObjectOutputStream;
 import com.example.immigrationconsultingfirm_project_cse213.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -47,16 +48,13 @@ public class ApplicationSubmission {
     }
 
     ApplicationSubmission ad = new ApplicationSubmission(
-           // nameTextField.getText(),
+            // nameTextField.getText(),
             //passwordTextField.getText(),
             //applicationTypeComboBox.getValue(),
             //submissionDateDatePicker.getValue()
-        );
+    );
 
-
-        try
-
-      {
+    Try {
         File file = new File("ApplicationSubmission.bin");
         FileOutputStream fos;
         ObjectOutputStream oos;
@@ -68,29 +66,29 @@ public class ApplicationSubmission {
             fos = new FileOutputStream(file);
             oos = new ObjectOutputStream(fos);
         }
-
         oos.writeObject(ad);
         oos.close();
+        informationAlert("Added successfully!");
 
-        informationAlert("Application submitted successfully!");
+    } catch (Exception e) {
+        errorAlert("Error saving data to file!");
+    }
 
-    } catch(
-    Exception e)
 
-    {
-        errorAlert("Error saving data!");
-    }
-    public void errorAlert(String s){
-        Alert a = new Alert(Alert.AlertType.ERROR);
-        a.setContentText(s);
-        a.showAndWait();
-    }
-    public void informationAlert(String s) {
-        Alert a = new Alert(Alert.AlertType.INFORMATION);
-        a.setContentText(s);
-        a.showAndWait();
-    }
 }
+    public void errorAlert(String s){
+         Alert a = new Alert(Alert.AlertType.ERROR);
+         a.setContentText(s);
+         a.showAndWait();
+}
+    void informationAlert(String s){
+          Alert a = new Alert(Alert.AlertType.INFORMATION);
+          a.setContentText(s);
+          a.showAndWait();
+}
+
+
+
 
 
 

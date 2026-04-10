@@ -58,7 +58,7 @@ public class DocumentsVerification
 
                 );
         try {
-            File file = new File("ClientProfiles.bin");
+            File file = new File("DocumentVerificati.bin");
             FileOutputStream fos;
             ObjectOutputStream oos;
 

@@ -58,7 +58,7 @@ public class ClientProfilesController
                 Integer.parseInt(contactTextfield.getText())
         );
         try {
-            File file = new File("DocumentVerification.bin");
+            File file = new File("ClientProfiles.bin");
             FileOutputStream fos;
             ObjectOutputStream oos;
 
