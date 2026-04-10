@@ -22,4 +22,6 @@ module com.example.immigrationconsultingfirm_project_cse213 {
     opens com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Model to javafx.fxml;
     exports com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller;
     opens com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller to javafx.fxml;
+    exports com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant;
+    opens com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant to javafx.fxml;
 }
