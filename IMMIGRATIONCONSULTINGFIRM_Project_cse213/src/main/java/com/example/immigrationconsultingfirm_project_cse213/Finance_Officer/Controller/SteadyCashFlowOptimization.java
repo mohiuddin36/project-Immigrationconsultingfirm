@@ -9,6 +9,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -32,6 +33,10 @@ public class SteadyCashFlowOptimization
 
     @javafx.fxml.FXML
     public void initialize() {
+        paymentStatusComboBox.getItems().addAll("Paid","unpaid");
+        nameTableView.setCellValueFactory(new PropertyValueFactory<>("name"));
+        passwordTableView.setCellValueFactory(new PropertyValueFactory<>("password"));
+        paymentStatusTableView.setCellValueFactory(new PropertyValueFactory<>("paymentStatus"));
     }
 
     @javafx.fxml.FXML

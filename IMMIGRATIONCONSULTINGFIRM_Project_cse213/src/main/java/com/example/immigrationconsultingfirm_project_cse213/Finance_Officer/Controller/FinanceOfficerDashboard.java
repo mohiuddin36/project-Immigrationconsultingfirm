@@ -24,4 +24,28 @@ public class FinanceOfficerDashboard
         stage.setScene(scene);
         stage.show();
     }
+
+    @javafx.fxml.FXML
+    public void budgetMonitorButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void cashFlowSteadyButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void monthlyFinancialReportButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void paymentBreakdownButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void cashRequirementForecastButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void visaRuleCheckButton(ActionEvent actionEvent) {
+    }
 }
