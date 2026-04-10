@@ -19,9 +19,9 @@
       <Text layoutX="98.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client Namw" />
       <TableView fx:id="tableView" layoutX="5.0" layoutY="177.0" prefHeight="200.0" prefWidth="602.0">
         <columns>
-          <TableColumn fx:id="clientNameTableView" prefWidth="185.6000428199768" text="Client Name" />
-          <TableColumn fx:id="clientIdTableView" prefWidth="150.39996337890625" text="Client ID" />
-            <TableColumn fx:id="applicationStreamTableView" prefWidth="255.20004272460938" text="Application Stream" />
+          <TableColumn fx:id="clientNameTableColumn" prefWidth="185.6000428199768" text="Client Name" />
+          <TableColumn fx:id="clientIdTableColumn" prefWidth="150.39996337890625" text="Client ID" />
+            <TableColumn fx:id="applicationStreamTableColumn" prefWidth="255.20004272460938" text="Application Stream" />
         </columns>
       </TableView>
       <Button layoutX="46.0" layoutY="408.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
