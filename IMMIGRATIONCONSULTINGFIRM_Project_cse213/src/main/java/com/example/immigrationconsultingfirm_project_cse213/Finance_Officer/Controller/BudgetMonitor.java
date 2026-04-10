@@ -37,7 +37,7 @@ public class BudgetMonitor
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/financeOfficerDashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Budget Monitor");
+        stage.setTitle("Finance officer Dashboard");
         stage.setScene(scene);
         stage.show();
     }

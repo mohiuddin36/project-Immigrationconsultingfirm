@@ -27,7 +27,7 @@ public class FinanceOfficerDashboard
 
     @javafx.fxml.FXML
     public void budgetMonitorButton(ActionEvent actionEvent) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/budgetMonitor.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/budgetMonitor-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Budget Monitor");
@@ -37,7 +37,7 @@ public class FinanceOfficerDashboard
 
     @javafx.fxml.FXML
     public void cashFlowSteadyButton(ActionEvent actionEvent)throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/steadyCashFlowOptimization.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/steadyCashFlowOptimization-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Cash flow Steady");
@@ -47,7 +47,7 @@ public class FinanceOfficerDashboard
 
     @javafx.fxml.FXML
     public void monthlyFinancialReportButton(ActionEvent actionEvent)  throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/monthlyFinanceReports.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/monthlyFinanceReports-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Monthly Financial Report");
@@ -59,7 +59,7 @@ public class FinanceOfficerDashboard
 
     @javafx.fxml.FXML
     public void paymentBreakdownButton(ActionEvent actionEvent) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/paymentBreakdown.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/paymentBreakdown-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Payment Breakdown");
@@ -69,7 +69,7 @@ public class FinanceOfficerDashboard
 
     @javafx.fxml.FXML
     public void cashRequirementForecastButton(ActionEvent actionEvent) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/cashForecast.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/cashForecast-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("cash Forecast");
@@ -79,7 +79,7 @@ public class FinanceOfficerDashboard
 
     @javafx.fxml.FXML
     public void visaRuleCheckButton(ActionEvent actionEvent) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/visaRuleCheck.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/visaRuleCheck-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("visa Rule Check");
@@ -89,7 +89,7 @@ public class FinanceOfficerDashboard
 
     @javafx.fxml.FXML
     public void clintFundControlButton(ActionEvent actionEvent)throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/clientFundControl.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/clientFundControl-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Client Fund Control");
