@@ -43,11 +43,11 @@ public class ClientAssessment
     }
 
     @javafx.fxml.FXML
-    public void saveButton(ActionEvent actionEvent) {
-        //ClientProfiles cp = new ClientProfiles(
-                //ieltsScoreTextField.getText(),
-                //educationTextField.getText(),
-                //workExperienceTextfield.getText()
+    ClientAssessment ca = new ClientAssessment(
+            //Integer.parseInt(ieltsScoreTextField.getText()),
+            //ducationTextField.getText(),
+            //Integer.parseInt(workExperienceTextfield.getText())
+    );
 
         try {
             File file = new File("ClientAssessment.bin");
