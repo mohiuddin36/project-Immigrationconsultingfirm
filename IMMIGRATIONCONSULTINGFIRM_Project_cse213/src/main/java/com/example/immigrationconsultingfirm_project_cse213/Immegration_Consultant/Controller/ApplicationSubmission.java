@@ -17,8 +17,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-public class ApplicationSubmission
-{
+public class ApplicationSubmission {
     @javafx.fxml.FXML
     private DatePicker submissionDateDatePicker;
     @javafx.fxml.FXML
@@ -34,7 +33,7 @@ public class ApplicationSubmission
     }
 
     @javafx.fxml.FXML
-    public void backButton(ActionEvent actionEvent)throws IOException {
+    public void backButton(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration Consultant/immegrationConsultantDashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -44,45 +43,56 @@ public class ApplicationSubmission
     }
 
     @javafx.fxml.FXML
-    public void saveButton(ActionEvent actionEvent) {
-        ApplicationData ad = new ApplicationData(
-                nameTextField.getText(),
-                passwordTextField.getText(),
-                applicationTypeComboBox.getValue(),
-                submissionDateDatePicker.getValue()
+    public void applicationsSubmissionButton(ActionEvent actionEvent) {
+    }
+
+    ApplicationSubmission ad = new ApplicationSubmission(
+           // nameTextField.getText(),
+            //passwordTextField.getText(),
+            //applicationTypeComboBox.getValue(),
+            //submissionDateDatePicker.getValue()
         );
 
 
-        try {
-            File file = new File("ApplicationSubmission.bin");
-            FileOutputStream fos;
-            ObjectOutputStream oos;
+        try
 
-            if (file.exists()) {
-                fos = new FileOutputStream(file, true);
-                oos = new AppendableObjectOutputStream(fos);
-            } else {
-                fos = new FileOutputStream(file);
-                oos = new ObjectOutputStream(fos);
-            }
+      {
+        File file = new File("ApplicationSubmission.bin");
+        FileOutputStream fos;
+        ObjectOutputStream oos;
 
-            oos.writeObject(ad);
-            oos.close();
-
-            informationAlert("Application submitted successfully!");
-
-        } catch (Exception e) {
-            errorAlert("Error saving data!");
+        if (file.exists()) {
+            fos = new FileOutputStream(file, true);
+            oos = new AppendableObjectOutputStream(fos);
+        } else {
+            fos = new FileOutputStream(file);
+            oos = new ObjectOutputStream(fos);
         }
-        public void errorAlert(String s){
-            Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setContentText(s);
-            a.showAndWait();
-        }
-        public void informationAlert(String s){
-            Alert a = new Alert(Alert.AlertType.INFORMATION);
-            a.setContentText(s);
-            a.showAndWait();
+
+        oos.writeObject(ad);
+        oos.close();
+
+        informationAlert("Application submitted successfully!");
+
+    } catch(
+    Exception e)
+
+    {
+        errorAlert("Error saving data!");
     }
+    public void errorAlert(String s){
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        a.setContentText(s);
+        a.showAndWait();
+    }
+    public void informationAlert(String s) {
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText(s);
+        a.showAndWait();
     }
 }
+
+
+
+
+

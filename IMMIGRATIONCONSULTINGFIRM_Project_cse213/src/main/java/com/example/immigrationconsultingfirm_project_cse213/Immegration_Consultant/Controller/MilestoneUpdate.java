@@ -13,8 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MilestoneUpdate
-{
+public class MilestoneUpdate {
     @javafx.fxml.FXML
     private TextField passwordTextField;
     @javafx.fxml.FXML
@@ -38,23 +37,22 @@ public class MilestoneUpdate
         stage.show();
     }
 
+
     @javafx.fxml.FXML
-    public void saveButton(ActionEvent actionEvent) {
-
-
-
-
-
+    public void milestoneUpdateButton(ActionEvent actionEvent) {
 
     }
-    public void errorAlert(String s){
-            Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setContentText(s);
-            a.showAndWait();
-        }
 
-        public void informationAlert(String s){
-            Alert a = new Alert(Alert.AlertType.INFORMATION);
-            a.setContentText(s);
-            a.showAndWait();
+
+    public void errorAlert(String s) {
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        a.setContentText(s);
+        a.showAndWait();
+    }
+
+    public void informationAlert(String s) {
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText(s);
+        a.showAndWait();
+    }
 }
