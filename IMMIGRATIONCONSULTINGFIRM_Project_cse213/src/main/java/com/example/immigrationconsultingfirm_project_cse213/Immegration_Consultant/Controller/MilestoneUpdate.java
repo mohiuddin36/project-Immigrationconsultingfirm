@@ -37,7 +37,7 @@ public class MilestoneUpdate {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration Consultant/immegrationConsultantDashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Milestone Update");
+        stage.setTitle("Immigration Consultant Dashboard");
         stage.setScene(scene);
         stage.show();
     }
@@ -52,7 +52,7 @@ public class MilestoneUpdate {
                 UpdateDateDatePicker.getValue()
         );
         try {
-            File file = new File("ClientProfiles.bin");
+            File file = new File("MilestoneUpdate.bin");
             FileOutputStream fos;
             ObjectOutputStream oos;
 
