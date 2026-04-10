@@ -3,6 +3,7 @@ module com.example.immigrationconsultingfirm_project_cse213 {
     requires javafx.fxml;
     //requires com.example.immigrationconsultingfirm_project_cse213;
     requires javafx.graphics;
+    requires com.example.immigrationconsultingfirm_project_cse213;
     //requires com.example.immigrationconsultingfirm_project_cse213;
 
 

@@ -1,17 +1,16 @@
-package com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Controller;
+package com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class ClientFundConteol
+public class VisaRuleCheck
 {
     @javafx.fxml.FXML
-    private TextField idTextfield;
+    private TextField refundIdTextField;
     @javafx.fxml.FXML
-    private DatePicker transactionDatePicker;
+    private TextField applicationIdTextField;
     @javafx.fxml.FXML
-    private TextField nameTextfield;
+    private TextField nameTextField;
 
     @javafx.fxml.FXML
     public void initialize() {

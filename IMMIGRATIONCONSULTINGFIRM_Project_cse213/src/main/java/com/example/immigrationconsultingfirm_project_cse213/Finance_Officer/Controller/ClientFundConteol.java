@@ -1,17 +1,17 @@
 package com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class BudgetMonitor
+public class ClientFundConteol
 {
     @javafx.fxml.FXML
-    private TextField idTextField;
+    private TextField idTextfield;
     @javafx.fxml.FXML
-    private ComboBox<String> departmentTypeComboBox;
+    private DatePicker transactionDatePicker;
     @javafx.fxml.FXML
-    private TextField amountTextField;
+    private TextField nameTextfield;
 
     @javafx.fxml.FXML
     public void initialize() {

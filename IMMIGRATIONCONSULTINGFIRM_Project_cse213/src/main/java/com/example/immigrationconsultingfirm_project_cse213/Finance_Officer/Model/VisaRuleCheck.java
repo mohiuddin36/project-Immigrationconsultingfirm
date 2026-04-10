@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class VisaRuleCheck implements Serializable {
     //Enter Refund ID or Application ID to check policy compliance.
     protected int refundId, applicationId;
+    protected String name;
 
     public int getRefundId() {
         return refundId;
@@ -23,6 +24,8 @@ public class VisaRuleCheck implements Serializable {
         return "VisaRuleCheck{" +
                 "refundId=" + refundId +
                 ", applicationId=" + applicationId +
+                ", name='" + name + '\'' +
                 '}';
     }
 }
+
