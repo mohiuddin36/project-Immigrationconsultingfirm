@@ -23,6 +23,8 @@ public class AppointmentSchedule
 
     @javafx.fxml.FXML
     public void initialize() {
+
+
     }
 
     @javafx.fxml.FXML
@@ -37,5 +39,6 @@ public class AppointmentSchedule
 
     @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
+
     }
 }

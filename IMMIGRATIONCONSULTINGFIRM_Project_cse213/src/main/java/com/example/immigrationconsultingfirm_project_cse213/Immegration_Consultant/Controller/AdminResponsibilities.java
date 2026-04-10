@@ -5,11 +5,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class AdminResponsibilities
@@ -39,6 +43,12 @@ public class AdminResponsibilities
 
     @javafx.fxml.FXML
     public void initialize() {
+        clientNameTableView.setCellValueFactory(new PropertyValueFactory<>("name"));
+        clientIdTableView.setCellValueFactory(new PropertyValueFactory<>("clientId"));
+        feesTableView.setCellValueFactory(new PropertyValueFactory<>("fees"));
+        discountTableView.setCellValueFactory(new PropertyValueFactory<>("discount"));
+        passwordTableView.setCellValueFactory(new PropertyValueFactory<>("password"));
+
     }
 
     @javafx.fxml.FXML
@@ -53,5 +63,61 @@ public class AdminResponsibilities
 
     @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
+        AdminResponsibilities ar = new AdminResponsibilities(
+                clientIdTextField.getText(),
+                nameTextField.getText(),
+                passwordTextField.getText(),
+                //feesTextFieldText.getText(),
+                //Integer.parseInt(passportTextfield.getText()),
+                //Integer.parseInt(contactTextfield.getText())
+        );
+
+        try {
+
+            int finalAmount = fees - (fees * discount / 100);
+            BillingData bd = new BillingData(
+                    nameTextField.getText(),
+                    clientId,
+                    fees,
+                    discount,
+                    finalAmount
+            );
+
+            tableView.getItems().add(bd.toString());
+
+            // ✅ Save to file
+            File file = new File("BillingData.bin");
+            FileOutputStream fos;
+            ObjectOutputStream oos;
+
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(ar);
+            } else {
+                fos = new FileOutputStream(file);
+                oos = new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(bd);
+            oos.close();
+
+            informationAlert("Billing generated successfully!");
+
+        } catch (NumberFormatException e) {
+            errorAlert("Please enter valid numbers!");
+        } catch (Exception e) {
+            errorAlert("Error saving data!");
+        }
+    }
+    public void errorAlert(String s){
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        a.setContentText(s);
+        a.showAndWait();
+    }
+    public void informationAlert(String s){
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText(s);
+        a.showAndWait();
+
     }
 }
