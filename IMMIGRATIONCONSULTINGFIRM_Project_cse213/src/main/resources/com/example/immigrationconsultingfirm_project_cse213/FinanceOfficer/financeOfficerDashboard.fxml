@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="444.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller.FinanceOfficerDashboard">
+<AnchorPane prefHeight="502.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller.FinanceOfficerDashboard">
    <children>
       <Text layoutX="225.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finance Officer Dashboard" wrappingWidth="149.7327880859375" />
       <Button layoutX="23.0" layoutY="48.0" mnemonicParsing="false" onAction="#recordClientPaymentButton" prefHeight="33.0" prefWidth="162.0" text="Record Client Payment" />
@@ -14,5 +14,6 @@
       <Button layoutX="23.0" layoutY="273.0" mnemonicParsing="false" onAction="#paymentBreakdownButton" prefHeight="33.0" prefWidth="162.0" text="Payment Breakdown" />
       <Button layoutX="23.0" layoutY="337.0" mnemonicParsing="false" onAction="#budgetMonitorButton" prefHeight="33.0" prefWidth="162.0" text="Budget Monitor" />
       <Button layoutX="23.0" layoutY="389.0" mnemonicParsing="false" onAction="#monthlyFinancialReportButton" prefHeight="33.0" prefWidth="162.0" text="Monthly Financial Report" />
+      <Button layoutX="23.0" layoutY="442.0" mnemonicParsing="false" onAction="#clintFundControlButton" prefHeight="33.0" prefWidth="162.0" text="Client Fund Control" />
    </children>
 </AnchorPane>

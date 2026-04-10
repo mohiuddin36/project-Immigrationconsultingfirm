@@ -28,6 +28,7 @@ public class ClientPaymentRecord
 
     @javafx.fxml.FXML
     public void initialize() {
+
         typeCombobox.getItems().addAll("Retainer", "Gov Fee");
     }
 
