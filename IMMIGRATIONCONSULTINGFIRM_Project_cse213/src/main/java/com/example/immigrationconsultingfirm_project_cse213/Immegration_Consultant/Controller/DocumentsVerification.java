@@ -50,34 +50,31 @@ public class DocumentsVerification
     @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
         DocumentsVerification dv = new DocumentsVerification(
-                clientNameTextField.getText(),
-                documentTypeComboBox.getValue(),
-                expiryDateTextField.getText(),
+                //nameTextField.getText(),
+                //documentTypeComboBox.getValue(),
+                //expiryDateTextField.getText(),
+                //passwordTextField.getText(),
+                //documentNameTextField.getText(),
 
+                );
+        try {
+            File file = new File("ClientProfiles.bin");
+            FileOutputStream fos;
+            ObjectOutputStream oos;
 
-
-            try {
-
-                File file = new File("documentsVerification.bin");
-                FileOutputStream fos;
-                ObjectOutputStream oos;
-
-                if (file.exists()) {
-                    fos = new FileOutputStream(file, true);
-                    oos = new AppendableObjectOutputStream(fos);
-                } else {
-                    fos = new FileOutputStream(file);
-                    oos = new ObjectOutputStream(fos);
-                }
-
-                oos.writeObject(dv);
-                oos.close();
-
-                informationAlert("Document " + dv.getStatus());
-
-            } catch (Exception e) {
-                errorAlert("Error saving verification data!");
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file);
+                oos = new ObjectOutputStream(fos);
             }
+            oos.writeObject(dv);
+            oos.close();
+            informationAlert("Added successfully!");
+
+        } catch (Exception e) {
+            errorAlert("Error saving data to file!");
         }
 
     }
