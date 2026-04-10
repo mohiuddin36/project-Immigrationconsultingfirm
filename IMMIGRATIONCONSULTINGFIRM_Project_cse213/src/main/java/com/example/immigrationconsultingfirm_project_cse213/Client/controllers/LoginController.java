@@ -8,14 +8,9 @@ import javafx.scene.control.TextField;
 
 public class LoginController {
 
-    @FXML
-    private TextField usernameTextField;
-
-    @FXML
-    private PasswordField passwordField;
-
-    @FXML
-    private Label messageLabel;
+    @FXML private TextField usernameTextField;
+    @FXML private PasswordField passwordField;
+    @FXML private Label messageLabel;
 
     @FXML
     public void initialize() {
@@ -24,17 +19,14 @@ public class LoginController {
 
     @FXML
     public void loginOnClickButton(ActionEvent actionEvent) {
-
         String username = usernameTextField.getText();
         String password = passwordField.getText();
 
-        // Validation
         if (username.isEmpty() || password.isEmpty()) {
             messageLabel.setText("Please enter username and password!");
             return;
         }
 
-        // Dummy login check
         if (username.equals("admin") && password.equals("1234")) {
             messageLabel.setText("Login Successful!");
         } else {
