@@ -22,6 +22,8 @@ public class BudgetMonitor
 
     @javafx.fxml.FXML
     public void initialize() {
+        departmentTypeComboBox.getItems().addAll("Marketing", "Legal", "Admin");
+
     }
 
     @javafx.fxml.FXML

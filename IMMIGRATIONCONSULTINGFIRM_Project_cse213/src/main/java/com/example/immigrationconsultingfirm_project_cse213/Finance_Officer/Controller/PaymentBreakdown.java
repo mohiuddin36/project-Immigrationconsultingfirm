@@ -36,7 +36,8 @@ public class PaymentBreakdown
         applicationStreamComboBox.getItems().addAll("Paid","Unpaid");
         clientIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("clintId"));
         clientNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        applicationStreamComboBox.setCellFactory(new PropertyValueFactory<>("applicationStream"));
+        applicationStreamTableColumn.setCellFactory(new PropertyValueFactory<>("applicationStream"));
+
 
     }
 
