@@ -62,7 +62,7 @@ public class SteadyCashFlowOptimization
 
         );
         try {
-            File file = new File("PaymentRecord.bin");
+            File file = new File("SteadyCashFlowOptimization.bin");
             FileOutputStream fos;
             ObjectOutputStream oos;
 
