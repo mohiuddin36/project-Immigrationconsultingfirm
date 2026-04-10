@@ -44,7 +44,7 @@ public class BudgetMonitor
 
     @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
-        BudgetMonitor bd= new BudgetMonitor(
+        BudgetMonitor bm= new BudgetMonitor(
                // Integer.parseInt(idTextField.getText()),
                 //Integer.parseInt(amountTextField.getText()),
                 //departmentTypeComboBox.getValue()
@@ -61,17 +61,16 @@ public class BudgetMonitor
                 fos = new FileOutputStream(file);
                 oos = new ObjectOutputStream(fos);
             }
-            oos.writeObject(bd);
+            oos.writeObject(bm);
             oos.close();
             informationAlert("Payment saved successfully!");
 
         } catch (Exception e) {
-            errorAlert("Inconsistent Data!");
+            errorAlert("Error saving data to file");
         }
 
     }
 
-    // Code for Alert
     public void errorAlert(String s){
         Alert a = new Alert(Alert.AlertType.ERROR);
         a.setContentText(s);
