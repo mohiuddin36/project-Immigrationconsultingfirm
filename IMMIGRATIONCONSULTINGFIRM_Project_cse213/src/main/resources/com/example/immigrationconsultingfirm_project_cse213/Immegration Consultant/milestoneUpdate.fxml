@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Controller.MilestoneUpdate">
    <children>
       <Text layoutX="253.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Milestone Update" />
@@ -15,7 +14,7 @@
       <Text layoutX="70.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
       <Text layoutX="36.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Application Status" />
       <Text layoutX="51.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update date" />
-      <Button layoutX="58.0" layoutY="315.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
+      <Button layoutX="58.0" layoutY="315.0" mnemonicParsing="false" onAction="#milestoneUpdateButton" text="Milestone Update" />
       <Button layoutX="436.0" layoutY="335.0" mnemonicParsing="false" onAction="#backButton" text="Back To Dashboard" />
       <TextField fx:id="nameTextField" layoutX="156.0" layoutY="66.0" />
       <TextField fx:id="passwordTextField" layoutX="156.0" layoutY="116.0" />

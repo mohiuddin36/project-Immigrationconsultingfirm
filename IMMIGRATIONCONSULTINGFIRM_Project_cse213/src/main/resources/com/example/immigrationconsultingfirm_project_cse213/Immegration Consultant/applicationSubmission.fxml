@@ -7,14 +7,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="530.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Controller.ApplicationSubmission">
    <children>
       <TextField fx:id="nameTextField" layoutX="166.0" layoutY="97.0" />
       <Text layoutX="230.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Application Submission" />
       <TextField fx:id="passwordTextField" layoutX="166.0" layoutY="157.0" />
       <ComboBox fx:id="applicationTypeComboBox" layoutX="166.0" layoutY="217.0" prefWidth="150.0" />
-      <Button layoutX="93.0" layoutY="420.0" mnemonicParsing="false" onAction="#saveButton" text="Save " />
+      <Button layoutX="93.0" layoutY="420.0" mnemonicParsing="false" onAction="#applicationsSubmissionButton" text="Application Submission " />
       <Button layoutX="415.0" layoutY="433.0" mnemonicParsing="false" onAction="#backButton" text="Back to Deshboard" />
       <Text layoutX="87.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
       <Text layoutX="59.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Application type" />

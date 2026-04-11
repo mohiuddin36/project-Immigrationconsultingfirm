@@ -28,6 +28,7 @@ public class ClientPaymentRecord
 
     @javafx.fxml.FXML
     public void initialize() {
+
         typeCombobox.getItems().addAll("Retainer", "Gov Fee");
     }
 
@@ -36,7 +37,7 @@ public class ClientPaymentRecord
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/financeOfficerDashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Pay Bill");
+        stage.setTitle("Finance officer Dashboard");
         stage.setScene(scene);
         stage.show();
     }
