@@ -10,12 +10,12 @@
 
 <AnchorPane prefHeight="468.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller.PaymentBreakdown">
    <children>
-      <Text layoutX="175.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Breakdown" />
-      <Text layoutX="90.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client ID" />
+      <Text layoutX="232.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Breakdown" />
+      <Text layoutX="113.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client ID" />
       <Text layoutX="55.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Application Stream" />
-      <TextField fx:id="idTextField" layoutX="174.0" layoutY="101.0" />
+      <TextField fx:id="amountTextField" layoutX="174.0" layoutY="101.0" />
       <ComboBox fx:id="applicationStreamComboBox" layoutX="174.0" layoutY="141.0" prefWidth="150.0" />
-      <TextField fx:id="nameTaxtField" layoutX="175.0" layoutY="69.0" />
+      <TextField fx:id="nameTaxtField" layoutX="174.0" layoutY="40.0" />
       <Text layoutX="98.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client Name" />
       <TableView fx:id="tableView" layoutX="5.0" layoutY="177.0" prefHeight="200.0" prefWidth="602.0">
         <columns>
@@ -24,7 +24,9 @@
             <TableColumn fx:id="applicationStreamTableColumn" prefWidth="255.20004272460938" text="Application Stream" />
         </columns>
       </TableView>
-      <Button layoutX="46.0" layoutY="408.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
-      <Button layoutX="495.0" layoutY="408.0" mnemonicParsing="false" onAction="#backbutton" text="Back to Dashboard" />
+      <Button layoutX="46.0" layoutY="408.0" mnemonicParsing="false" onAction="#saveButton" text="CostBreakdownButton" />
+      <Button layoutX="434.0" layoutY="408.0" mnemonicParsing="false" onAction="#backbutton" text="Back to Dashboard" />
+      <TextField fx:id="nameTaxtField1" layoutX="174.0" layoutY="68.0" />
+      <Text layoutX="113.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" />
    </children>
 </AnchorPane>

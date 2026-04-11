@@ -1,52 +1,63 @@
 package com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller;
 
 import com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Model.AppendableObjectOutputStream;
+import com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Model.CashForecast;
 import com.example.immigrationconsultingfirm_project_cse213.HelloApplication;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.IOException;
+import java.time.LocalDate;
 
-public class VisaRuleCheck
-{
-    @javafx.fxml.FXML
-    private TextField refundIdTextField;
-    @javafx.fxml.FXML
-    private TextField applicationIdTextField;
-    @javafx.fxml.FXML
-    private TextField nameTextField;
+public class CashForecastController {
+
+    @FXML
+    private DatePicker applicationDeadlineTextField;
+
+    @FXML
+    private TextField passwordTextField;
+
+    @FXML
+    private TextField userNameTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
-    }
 
-    @javafx.fxml.FXML
-    public void backButton(ActionEvent actionEvent)throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/financeOfficerDashboard.fxml"));
+    }
+    @FXML
+    public void backbutton(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                HelloApplication.class.getResource("FinanceOfficer/financeOfficerDashboard.fxml")
+        );
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Finance officer Dashboard");
+        stage.setTitle("Finance Officer Dashboard");
         stage.setScene(scene);
         stage.show();
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void saveButton(ActionEvent actionEvent) {
-        VisaRuleCheck vr = new VisaRuleCheck(
-                //Integer.parseInt(refundIdTextField.getText()),
-                //Integer.parseInt(applicationIdTextField.getText()),
-                //nameTextField.getText()
-        );
+
+        String username = userNameTextField.getText();
+        String password = passwordTextField.getText();
+        LocalDate deadline = applicationDeadlineTextField.getValue();
+
+        // Create Model object
+        CashForecast cf = new CashForecast(username, password, deadline);
+
         try {
-            File file = new File("VisaRuleCheck.bin");
+            File file = new File("CashForecast.bin");
             FileOutputStream fos;
             ObjectOutputStream oos;
 
@@ -57,25 +68,28 @@ public class VisaRuleCheck
                 fos = new FileOutputStream(file);
                 oos = new ObjectOutputStream(fos);
             }
-            oos.writeObject(vr);
+
+            oos.writeObject(cf);
             oos.close();
-            informationAlert("Payment done successfully!");
+
+            informationAlert("Saved successfully!");
 
         } catch (Exception e) {
-            errorAlert("Error saving data to file!");
+            errorAlert("Error saving data!");
         }
-
     }
 
-    // Code for Alert
+    // ⚠️ Alerts
     public void errorAlert(String s){
         Alert a = new Alert(Alert.AlertType.ERROR);
         a.setContentText(s);
         a.showAndWait();
     }
+
     public void informationAlert(String s){
         Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setContentText(s);
         a.showAndWait();
     }
 }
+

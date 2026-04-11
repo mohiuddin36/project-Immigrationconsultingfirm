@@ -46,10 +46,12 @@ public class MilestoneUpdate {
     @javafx.fxml.FXML
     public void milestoneUpdateButton(ActionEvent actionEvent) {
         ClientProfiles cp = new ClientProfiles(
-                nameTextField.getText(),
-                passwordTextField.getText(),
-                applicationStatusComboBox.getValue(),
-                UpdateDateDatePicker.getValue()
+//                nameTextField.getText(),
+//                passwordTextField.getText(),
+//                applicationStatusComboBox.getValue(),
+//                UpdateDateDatePicker.getValue().toString(),
+//                0,
+//                0
         );
         try {
             File file = new File("MilestoneUpdate.bin");

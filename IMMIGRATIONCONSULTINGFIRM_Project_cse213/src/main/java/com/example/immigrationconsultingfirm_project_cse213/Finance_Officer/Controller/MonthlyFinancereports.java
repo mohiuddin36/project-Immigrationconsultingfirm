@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -14,8 +15,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-public class MonthlyFinancereports
-{
+public class MonthlyFinancereports {
     @javafx.fxml.FXML
     public void initialize() {
     }
@@ -29,6 +29,9 @@ public class MonthlyFinancereports
     }
 
     @javafx.fxml.FXML
+    private DatePicker dateDatePicker;
+
+    @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FinanceOfficer/financeOfficerDashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -38,13 +41,9 @@ public class MonthlyFinancereports
         stage.show();
     }
 
-    //@javafx.fxml.FXML
-    //public void costTextField(ActionEvent actionEvent) {
-    }
-
     @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
-        MonthlyFinancereports bd= new MonthlyFinancereports(
+        MonthlyFinancereports bd = new MonthlyFinancereports(
                 // Integer.parseInt(idTextField.getText()),
                 //Integer.parseInt(amountTextField.getText()),
                 //departmentTypeComboBox.getValue()
@@ -71,17 +70,23 @@ public class MonthlyFinancereports
 
     }
 
-    // Code for Alert
-    public void errorAlert(String s){
+    public void errorAlert(String s) {
         Alert a = new Alert(Alert.AlertType.ERROR);
         a.setContentText(s);
         a.showAndWait();
     }
-    public void informationAlert(String s){
+
+    public void informationAlert(String s) {
         Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setContentText(s);
         a.showAndWait();
     }
+
 }
+
+
+
+
+
 
 

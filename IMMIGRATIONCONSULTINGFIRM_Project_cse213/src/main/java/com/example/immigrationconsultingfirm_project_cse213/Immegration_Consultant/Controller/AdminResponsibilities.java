@@ -18,7 +18,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-import static jdk.internal.org.jline.utils.Colors.s;
 
 public class AdminResponsibilities
 {

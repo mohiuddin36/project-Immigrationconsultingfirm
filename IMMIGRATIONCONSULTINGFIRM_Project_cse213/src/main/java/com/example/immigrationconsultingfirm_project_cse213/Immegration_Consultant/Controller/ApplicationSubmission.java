@@ -10,7 +10,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -54,38 +53,44 @@ public class ApplicationSubmission {
             //submissionDateDatePicker.getValue()
     );
 
-    Try {
+    public void errorAlert(String s) {
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        a.setContentText(s);
+        a.showAndWait();
+    }
+
+    void informationAlert(String s) {
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText(s);
+        a.showAndWait();
+    }
+
+    void createFile() {
         File file = new File("ApplicationSubmission.bin");
         FileOutputStream fos;
         ObjectOutputStream oos;
 
-        if (file.exists()) {
-            fos = new FileOutputStream(file, true);
-            oos = new AppendableObjectOutputStream(fos);
-        } else {
-            fos = new FileOutputStream(file);
-            oos = new ObjectOutputStream(fos);
+        try {
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file);
+                oos = new ObjectOutputStream(fos);
+            }
+            oos.writeObject(ad);
+            oos.close();
+            informationAlert("Added successfully!");
+
+        } catch (
+                Exception e) {
+            errorAlert("Error saving data to file!");
+
         }
-        oos.writeObject(ad);
-        oos.close();
-        informationAlert("Added successfully!");
-
-    } catch (Exception e) {
-        errorAlert("Error saving data to file!");
     }
+}
 
 
-}
-    public void errorAlert(String s){
-         Alert a = new Alert(Alert.AlertType.ERROR);
-         a.setContentText(s);
-         a.showAndWait();
-}
-    void informationAlert(String s){
-          Alert a = new Alert(Alert.AlertType.INFORMATION);
-          a.setContentText(s);
-          a.showAndWait();
-}
 
 
 

@@ -1,5 +1,6 @@
 package com.example.immigrationconsultingfirm_project_cse213.Client.Model_Classes;
 
+import javax.swing.plaf.synth.SynthRadioButtonMenuItemUI;
 import java.time.LocalDate;
 
 public class Appointment {
@@ -17,20 +18,17 @@ public class Appointment {
         this.status = status;
     }
 
-<<<<<<< HEAD
+
     public Appointment(String clientA, String consultantX, LocalDate now) {
     }
+//
+//    public String getAppointmentId() { return appointmentId; }
+//
 
-    public String getAppointmentId() { return appointmentId; }
-    public String getServiceType() { return serviceType; }
-    public LocalDate getDate() { return date; }
-    public String getTime() { return time; }
-    public String getStatus() { return status; }
-=======
     public String getServiceType() {
         return serviceType;
     }
->>>>>>> 0b43a4f301ae74d76de41655f8275ec513d9b641
+
 
     public LocalDate getDate() {
         return date;
@@ -70,11 +68,8 @@ public class Appointment {
                 '}';
     }
 
-<<<<<<< HEAD
-
     public Object getConsultant() {
+        return new Object();
     }
 }
-=======
-}
->>>>>>> 0b43a4f301ae74d76de41655f8275ec513d9b641
+
