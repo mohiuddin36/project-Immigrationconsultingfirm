@@ -41,8 +41,6 @@ public class MonthlyFinancereports
         stage.show();
     }
 
-    //@javafx.fxml.FXML
-    //public void costTextField(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
@@ -74,7 +72,6 @@ public class MonthlyFinancereports
 
     }
 
-    // Code for Alert
     public void errorAlert(String s){
         Alert a = new Alert(Alert.AlertType.ERROR);
         a.setContentText(s);

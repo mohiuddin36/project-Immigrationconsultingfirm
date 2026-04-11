@@ -1,50 +1,95 @@
 package com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Controller;
 
-import javafx.event.ActionEvent;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Model.AppendableObjectOutputStream;
+import com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Model.CashForecast;
+import com.example.immigrationconsultingfirm_project_cse213.HelloApplication;
 
-import java.io.Serializable;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.IOException;
 import java.time.LocalDate;
 
-public class CashForecast implements Serializable {
-    protected String username, password;
-    protected LocalDate applicationDeadlines,
-    @javafx.fxml.FXML
+public class CashForecastController {
+
+    @FXML
     private DatePicker applicationDeadlineTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField passwordTextField;
-    @javafx.fxml.FXML
-    private TextField userNameTaxtfield;
-    ;
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public CashForecast(String username) {
-        this.username = username;
-    }
-
-    @Override
-    public String toString() {
-        return "CashForecast{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", applicationDeadlines=" + applicationDeadlines +
-                '}';
-    }
+    @FXML
+    private TextField userNameTextField;
 
     @javafx.fxml.FXML
-    public void backbutton(ActionEvent actionEvent) {
+    public void initialize() {
+
+    }
+    @FXML
+    public void backbutton(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                HelloApplication.class.getResource("FinanceOfficer/financeOfficerDashboard.fxml")
+        );
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Finance Officer Dashboard");
+        stage.setScene(scene);
+        stage.show();
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void saveButton(ActionEvent actionEvent) {
+
+        String username = userNameTextField.getText();
+        String password = passwordTextField.getText();
+        LocalDate deadline = applicationDeadlineTextField.getValue();
+
+        // Create Model object
+        CashForecast cf = new CashForecast(username, password, deadline);
+
+        try {
+            File file = new File("CashForecast.bin");
+            FileOutputStream fos;
+            ObjectOutputStream oos;
+
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file);
+                oos = new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(cf);
+            oos.close();
+
+            informationAlert("Saved successfully!");
+
+        } catch (Exception e) {
+            errorAlert("Error saving data!");
+        }
+    }
+
+    // ⚠️ Alerts
+    public void errorAlert(String s){
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        a.setContentText(s);
+        a.showAndWait();
+    }
+
+    public void informationAlert(String s){
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText(s);
+        a.showAndWait();
     }
 }
 
