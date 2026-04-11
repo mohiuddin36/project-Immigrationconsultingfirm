@@ -76,6 +76,12 @@ public class Appointment {
     public Appointment(String number, String rahim, String date) {
     }
 
+    public Appointment(String number, String karim, String date, String pending) {
+    }
+
+    public Appointment(String number, String rahim, String date) {
+    }
+
     public int getId() {
         return id;
     }
@@ -196,5 +202,8 @@ public class Appointment {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void add(Appointment appointment) {
     }
 }

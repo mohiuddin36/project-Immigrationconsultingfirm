@@ -4,6 +4,36 @@ public class Appointment2 {
     private String id;
     private String name;
     private String date;
+    private String id;
+    private String name;
+    private String consultant;
+
+    @Override
+    public String toString() {
+        return "Appointment2{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", consultant='" + consultant + '\'' +
+                ", date='" + date + '\'' +
+                '}';
+    }
+
+    public String getConsultant() {
+        return consultant;
+    }
+
+    public void setConsultant(String consultant) {
+        this.consultant = consultant;
+    }
+
+    public Appointment2(String name, String consultant, String date, String id) {
+        this.name = name;
+        this.consultant = consultant;
+        this.date = date;
+        this.id = id;
+    }
+
+    private String date;
 
     public Appointment2(String id, String name, String date) {
         this.id = id;
