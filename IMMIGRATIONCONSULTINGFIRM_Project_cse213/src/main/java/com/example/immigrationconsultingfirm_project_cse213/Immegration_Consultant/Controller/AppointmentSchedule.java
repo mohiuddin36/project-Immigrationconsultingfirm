@@ -17,24 +17,31 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-public class AppointmentSchedule
-{
+import java.io.Serializable;
+
+import static jdk.internal.agent.Agent.getText;
+
+public class AppointmentSchedule implements Serializable {
+
     @javafx.fxml.FXML
     private ComboBox<String> appoinmentTypeComboBox;
+
     @javafx.fxml.FXML
     private TextField appoinmentTimeTextField;
+
     @javafx.fxml.FXML
     private DatePicker appoinmentDateDatePicker;
 
     @javafx.fxml.FXML
     public void initialize() {
 
-
     }
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immigration Consultant/immigrationConsultantDashboard.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                HelloApplication.class.getResource("Immigration_Consultant/immigrationConsultantDashboard.fxml")
+        );
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Immigration Consultant Dashboard");
@@ -44,10 +51,16 @@ public class AppointmentSchedule
 
     @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
-        AppointmentSchedule as = new AppointmentSchedule(
-                //appointmentTypeComboBox.getValue(),
 
-        );
+        AppointmentSchedule as = new AppointmentSchedule();
+                //nameTextfield.getText(),
+               //passwordTextfield.getText(),
+                //appoinmentTypeComboBox.getValue(),
+
+
+              );
+
+
         try {
             File file = new File("AppointmentSchedule.bin");
             FileOutputStream fos;
@@ -60,26 +73,26 @@ public class AppointmentSchedule
                 fos = new FileOutputStream(file);
                 oos = new ObjectOutputStream(fos);
             }
+
             oos.writeObject(as);
             oos.close();
+
             informationAlert("Added successfully!");
 
         } catch (Exception e) {
             errorAlert("Error saving data to file!");
         }
-
     }
+
     public void errorAlert(String s){
         Alert a = new Alert(Alert.AlertType.ERROR);
         a.setContentText(s);
         a.showAndWait();
     }
+
     public void informationAlert(String s){
         Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setContentText(s);
         a.showAndWait();
-    }
-
-
     }
 }

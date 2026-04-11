@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -27,6 +28,8 @@ public class MonthlyFinancereports
     @javafx.fxml.FXML
     public void feesTextField(ActionEvent actionEvent) {
     }
+    @javafx.fxml.FXML
+    private DatePicker dateDatePicker;
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) throws IOException {
@@ -82,6 +85,6 @@ public class MonthlyFinancereports
         a.setContentText(s);
         a.showAndWait();
     }
-}
+
 
 

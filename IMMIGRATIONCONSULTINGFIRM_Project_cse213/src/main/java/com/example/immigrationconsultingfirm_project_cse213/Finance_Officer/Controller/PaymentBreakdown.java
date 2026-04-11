@@ -19,8 +19,6 @@ import java.io.ObjectOutputStream;
 public class PaymentBreakdown
 {
     @javafx.fxml.FXML
-    private TextField idTextField;
-    @javafx.fxml.FXML
     private TextField nameTaxtField;
     @javafx.fxml.FXML
     private ComboBox<String> applicationStreamComboBox;
@@ -32,6 +30,10 @@ public class PaymentBreakdown
     private TableColumn<PaymentBreakdown,Integer> clientIdTableColumn;
     @javafx.fxml.FXML
     private TableColumn<PaymentBreakdown,String> clientNameTableColumn;
+    @javafx.fxml.FXML
+    private TextField amountTextField;
+    @javafx.fxml.FXML
+    private TextField nameTaxtField1;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -60,7 +62,7 @@ public class PaymentBreakdown
         PaymentBreakdown pb = new PaymentBreakdown(
                //Integer.parseInt(idTextfield.getText()),
                 //applicationStreamComboBox.getValue(),
-                //nameTextfield.getText()
+                //nameTextfield.getText(),
         );
         try {
             File file = new File("PaymentRecord.bin");
