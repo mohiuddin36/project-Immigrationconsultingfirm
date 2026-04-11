@@ -1,13 +1,12 @@
 package com.example.immigrationconsultingfirm_project_cse213.AppointmentCoordinator;
 
-import com.example.immigrationconsultingfirm_project_cse213.Client.Model_Classes.Appointment;
+import com.example.immigrationconsultingfirm_project_cse213.Busrat.Model_Classes.Appointment;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 
-import javax.swing.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
