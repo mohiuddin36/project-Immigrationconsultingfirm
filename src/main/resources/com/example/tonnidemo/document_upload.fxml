@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.DocumentUploadController"
+            prefHeight="350.0" prefWidth="500.0">
+
+    <children>
+
+        <!-- TITLE -->
+        <Label text="UPLOAD DOCUMENT"
+               layoutX="170" layoutY="10"
+               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <!-- DOCUMENT TYPE -->
+        <ComboBox fx:id="docTypeBox"
+                  layoutX="50" layoutY="60"
+                  prefWidth="200"
+                  promptText="Document Type"/>
+
+        <!-- FILE PATH -->
+        <TextField fx:id="filePathField"
+                   layoutX="50" layoutY="110"
+                   prefWidth="200"
+                   promptText="File Path"/>
+
+        <!-- CHOOSE FILE -->
+        <Button text="Choose File"
+                layoutX="270" layoutY="110"
+                prefWidth="120"
+                onAction="#handleChooseFile"/>
+
+        <!-- UPLOAD -->
+        <Button text="Upload"
+                layoutX="50" layoutY="170"
+                prefWidth="200"
+                onAction="#handleUpload"/>
+
+        <!-- BACK BUTTON (IMPORTANT FIX) -->
+        <Button text="Back"
+                layoutX="50" layoutY="220"
+                prefWidth="200"
+                onAction="#goBack"/>
+
+        <!-- MESSAGE -->
+        <Label fx:id="messageLabel"
+               layoutX="50" layoutY="270"
+               prefWidth="400"
+               text="Select and upload your document"
+               style="-fx-border-color: gray; -fx-padding: 5;"/>
+
+    </children>
+
+</AnchorPane>

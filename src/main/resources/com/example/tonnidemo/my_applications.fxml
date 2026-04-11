@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.MyApplicationsController"
+            prefHeight="350.0" prefWidth="500.0">
+
+    <children>
+
+        <Label text="MY APPLICATIONS"
+               layoutX="170" layoutY="10"
+               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <TableView fx:id="applicationTable"
+                   layoutX="10" layoutY="40"
+                   prefHeight="180" prefWidth="480">
+
+            <columns>
+                <TableColumn text="ID" prefWidth="80"/>
+                <TableColumn text="Visa" prefWidth="120"/>
+                <TableColumn text="Country" prefWidth="120"/>
+                <TableColumn text="Status" prefWidth="160"/>
+            </columns>
+
+        </TableView>
+
+        <Button text="Update"
+                layoutX="50" layoutY="240"
+                prefWidth="180"
+                onAction="#handleUpdate"/>
+
+        <Button text="Withdraw"
+                layoutX="260" layoutY="240"
+                prefWidth="180"
+                onAction="#handleWithdraw"/>
+
+    </children>
+
+</AnchorPane>

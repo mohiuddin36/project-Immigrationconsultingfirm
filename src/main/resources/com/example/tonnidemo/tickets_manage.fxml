@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.TicketManageController"
+            prefHeight="350.0" prefWidth="500.0">
+
+    <children>
+
+        <Label text="TICKETS"
+               layoutX="200" layoutY="10"
+               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <TableView fx:id="ticketTable"
+                   layoutX="10" layoutY="40"
+                   prefHeight="200" prefWidth="480">
+
+            <columns>
+                <TableColumn text="ID" prefWidth="80"/>
+                <TableColumn text="Subject" prefWidth="150"/>
+                <TableColumn text="Status" prefWidth="120"/>
+                <TableColumn text="Date" prefWidth="120"/>
+            </columns>
+
+        </TableView>
+
+        <TextArea fx:id="replyArea"
+                  layoutX="10" layoutY="250"
+                  prefHeight="60" prefWidth="480"
+                  promptText="Reply"/>
+
+        <Button text="Send Reply"
+                layoutX="10" layoutY="320"
+                prefWidth="480"
+                onAction="#handleReply"/>
+
+    </children>
+
+</AnchorPane>

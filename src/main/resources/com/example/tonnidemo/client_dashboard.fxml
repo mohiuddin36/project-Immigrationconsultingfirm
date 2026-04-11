@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.ClientDashboardController"
+            prefHeight="350.0" prefWidth="500.0">
+
+    <children>
+
+        <!-- TITLE -->
+        <Label text="CLIENT DASHBOARD"
+               layoutX="160" layoutY="10"
+               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <!-- BUTTONS -->
+        <Button text="Appointment"
+                layoutX="50" layoutY="60"
+                prefWidth="180"
+                onAction="#openAppointment"/>
+
+        <Button text="Documents"
+                layoutX="50" layoutY="110"
+                prefWidth="180"
+                onAction="#openDocument"/>
+
+        <Button text="Payment"
+                layoutX="50" layoutY="160"
+                prefWidth="180"
+                onAction="#openPayment"/>
+
+        <Button text="Application Status"
+                layoutX="50" layoutY="210"
+                prefWidth="180"
+                onAction="#openApplication"/>
+
+        <Button text="Helpdesk"
+                layoutX="50" layoutY="260"
+                prefWidth="180"
+                onAction="#openHelpdesk"/>
+
+        <Button text="Notifications"
+                layoutX="50" layoutY="310"
+                prefWidth="180"
+                onAction="#openNotifications"/>
+
+    </children>
+
+</AnchorPane>

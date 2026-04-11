@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.HelpdeskController"
+            prefHeight="350.0" prefWidth="500.0">
+
+    <children>
+
+        <Label text="HELPDESK"
+               layoutX="200" layoutY="10"
+               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="subjectField"
+                   layoutX="50" layoutY="60"
+                   prefWidth="400"
+                   promptText="Subject"/>
+
+        <ComboBox fx:id="categoryBox"
+                  layoutX="50" layoutY="110"
+                  prefWidth="400"/>
+
+        <TextArea fx:id="descriptionArea"
+                  layoutX="50" layoutY="160"
+                  prefHeight="80" prefWidth="400"
+                  promptText="Description"/>
+
+        <Button text="Submit"
+                layoutX="50" layoutY="260"
+                prefWidth="400"
+                onAction="#handleSubmit"/>
+
+        <Button text="Back"
+                layoutX="50" layoutY="300"
+                prefWidth="400"
+                onAction="#goBack"/>
+
+    </children>
+
+</AnchorPane>

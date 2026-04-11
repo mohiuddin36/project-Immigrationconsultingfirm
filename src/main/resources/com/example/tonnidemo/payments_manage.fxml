@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.PaymentsManageController"
+            prefHeight="350.0" prefWidth="500.0">
+
+    <children>
+
+        <Label text="PAYMENTS"
+               layoutX="200" layoutY="10"
+               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <TableView fx:id="paymentTable"
+                   layoutX="10" layoutY="40"
+                   prefHeight="200" prefWidth="480">
+
+            <columns>
+                <TableColumn text="App ID" prefWidth="100"/>
+                <TableColumn text="Client" prefWidth="120"/>
+                <TableColumn text="Amount" prefWidth="100"/>
+                <TableColumn text="Status" prefWidth="120"/>
+            </columns>
+
+        </TableView>
+
+        <Button text="Confirm"
+                layoutX="50" layoutY="260"
+                prefWidth="180"
+                onAction="#handleConfirm"/>
+
+        <Button text="Reject"
+                layoutX="260" layoutY="260"
+                prefWidth="180"
+                onAction="#handleReject"/>
+
+    </children>
+
+</AnchorPane>

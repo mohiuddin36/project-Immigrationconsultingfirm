@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.PaymentController"
+            prefHeight="550.0" prefWidth="650.0">
+
+    <children>
+
+        <!-- TITLE -->
+        <Label text="PAYMENT SYSTEM"
+               layoutX="250" layoutY="10"
+               style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+        <!-- INPUTS -->
+        <TextField fx:id="appIdField"
+                   layoutX="50" layoutY="60"
+                   prefWidth="250"
+                   promptText="Application ID"/>
+
+        <TextField fx:id="amountField"
+                   layoutX="320" layoutY="60"
+                   prefWidth="250"
+                   promptText="Amount"/>
+
+        <ComboBox fx:id="methodBox"
+                  layoutX="50" layoutY="110"
+                  prefWidth="520"
+                  promptText="Select Payment Method"/>
+
+        <TextField fx:id="cardField"
+                   layoutX="50" layoutY="160"
+                   prefWidth="250"
+                   promptText="Card Number (if needed)"/>
+
+        <TextField fx:id="cvvField"
+                   layoutX="320" layoutY="160"
+                   prefWidth="250"
+                   promptText="CVV"/>
+
+        <!-- BUTTONS -->
+        <Button text="Pay Now"
+                layoutX="50" layoutY="210"
+                prefWidth="250"
+                onAction="#handlePay"/>
+
+        <Button text="Back"
+                layoutX="320" layoutY="210"
+                prefWidth="250"
+                onAction="#goBack"/>
+
+        <!-- MESSAGE -->
+        <Label fx:id="msgLabel"
+               layoutX="50" layoutY="250"
+               prefWidth="520"
+               text="Select payment method"
+               style="-fx-border-color: gray; -fx-padding: 5;"/>
+
+        <!-- TABLE -->
+        <TableView fx:id="paymentTable"
+                   layoutX="50" layoutY="290"
+                   prefHeight="230" prefWidth="520">
+
+            <columns>
+
+                <TableColumn fx:id="colId" text="ID" prefWidth="100"/>
+                <TableColumn fx:id="colApp" text="App ID" prefWidth="100"/>
+                <TableColumn fx:id="colAmount" text="Amount" prefWidth="80"/>
+                <TableColumn fx:id="colMethod" text="Method" prefWidth="120"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+
+            </columns>
+
+        </TableView>
+
+    </children>
+
+</AnchorPane>

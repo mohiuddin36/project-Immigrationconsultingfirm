@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.ClientLoginController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+
+        <!-- TITLE -->
+        <Label text="CLIENT LOGIN"
+               layoutX="230" layoutY="40"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+        <!-- EMAIL -->
+        <TextField fx:id="emailField"
+                   layoutX="180" layoutY="100"
+                   prefWidth="250"
+                   promptText="Enter Email"/>
+
+        <!-- PASSWORD -->
+        <PasswordField fx:id="passwordField"
+                       layoutX="180" layoutY="150"
+                       prefWidth="250"
+                       promptText="Enter Password"/>
+
+        <!-- LOGIN BUTTON -->
+        <Button text="Login"
+                layoutX="180" layoutY="210"
+                prefWidth="250"
+                onAction="#handleLogin"/>
+
+        <!-- MESSAGE -->
+        <Label fx:id="messageLabel"
+               layoutX="180" layoutY="270"
+               textFill="red"/>
+
+    </children>
+
+</AnchorPane>

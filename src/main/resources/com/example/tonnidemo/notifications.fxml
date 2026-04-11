@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.NotificationsController"
+            prefHeight="350.0" prefWidth="500.0">
+
+    <children>
+
+        <Label text="NOTIFICATIONS"
+               layoutX="180" layoutY="10"
+               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <TableView fx:id="notificationTable"
+                   layoutX="10" layoutY="40"
+                   prefHeight="220" prefWidth="480">
+
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+                <TableColumn fx:id="colMessage" text="Message" prefWidth="200"/>
+                <TableColumn fx:id="colDate" text="Date" prefWidth="120"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="80"/>
+            </columns>
+
+        </TableView>
+
+        <Button text="Back"
+                layoutX="10" layoutY="300"
+                onAction="#goBack"/>
+
+    </children>
+
+</AnchorPane>

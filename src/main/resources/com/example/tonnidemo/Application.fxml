@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.ApplicationController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+
+        <!-- LABEL -->
+        <Label text="TITLE"
+               layoutX="200" layoutY="20"
+               style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+        <!-- TEXT FIELD -->
+        <TextField fx:id="textField"
+                   layoutX="150" layoutY="80"
+                   prefWidth="200"
+                   promptText="Enter text"/>
+
+        <!-- BUTTON -->
+        <Button text="Submit"
+                layoutX="150" layoutY="130"
+                prefWidth="200"
+                onAction="#handleSubmit"/>
+
+    </children>
+
+</AnchorPane>

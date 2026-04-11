@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="350.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tonnidemo.DocumentVerificationController">
+
+    <children>
+
+        <Label layoutX="140" layoutY="10" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="DOCUMENT VERIFICATION" />
+
+        <TableView fx:id="documentTable" layoutX="10" layoutY="40" prefHeight="180" prefWidth="480">
+
+            <columns>
+                <TableColumn fx:id="colDocId" prefWidth="80" text="Doc ID" />
+                <TableColumn fx:id="colClient" prefWidth="135.33328247070312" text="Client" />
+                <TableColumn fx:id="colType" prefWidth="133.3333740234375" text="Type" />
+                <TableColumn fx:id="colStatus" prefWidth="130.666748046875" text="Status" />
+            </columns>
+
+        </TableView>
+
+        <Button layoutX="10" layoutY="240" onAction="#handleVerify" prefWidth="150" text="Verify" />
+
+        <Button layoutX="170" layoutY="240" onAction="#handleReject" prefWidth="150" text="Reject" />
+
+        <Button layoutX="330" layoutY="240" onAction="#handleRefresh" prefWidth="160" text="Refresh" />
+
+        <!-- BACK BUTTON (IMPORTANT FIX) -->
+        <Button layoutX="10" layoutY="280" onAction="#goBack" prefWidth="150" text="Back" />
+
+        <Label fx:id="messageLabel" layoutX="10" layoutY="320" prefWidth="480" style="-fx-border-color: gray; -fx-padding: 5;" text="Select document to verify" />
+
+    </children>
+
+</AnchorPane>

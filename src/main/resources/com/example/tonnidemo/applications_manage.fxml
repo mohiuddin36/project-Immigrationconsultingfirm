@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.AppointmentsManageController"
+            prefHeight="450" prefWidth="650">
+
+    <children>
+
+        <Label text="APPOINTMENTS MANAGER"
+               layoutX="200" layoutY="10"
+               style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+        <!-- TABLE -->
+        <TableView fx:id="appointmentTable"
+                   layoutX="10" layoutY="40"
+                   prefHeight="220" prefWidth="620">
+
+            <columns>
+                <TableColumn fx:id="colAppointmentId" text="ID" prefWidth="100"/>
+                <TableColumn fx:id="colName" text="Name" prefWidth="120"/>
+                <TableColumn fx:id="colVisaType" text="Visa" prefWidth="120"/>
+                <TableColumn fx:id="colCountry" text="Country" prefWidth="120"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+            </columns>
+
+        </TableView>
+
+        <!-- BUTTONS -->
+        <Button text="View"
+                layoutX="10" layoutY="280"
+                onAction="#handleView"/>
+
+        <Button text="Update"
+                layoutX="100" layoutY="280"
+                onAction="#handleUpdate"/>
+
+        <Button text="Refresh"
+                layoutX="200" layoutY="280"
+                onAction="#handleRefresh"/>
+
+        <!-- BACK BUTTON -->
+        <Button text="Back"
+                layoutX="300" layoutY="280"
+                onAction="#goBack"/>
+
+        <!-- LABEL -->
+        <Label fx:id="messageLabel"
+               layoutX="10" layoutY="330"
+               prefWidth="620"
+               style="-fx-border-color: gray; -fx-padding: 5;"
+               text="Select appointment..."/>
+
+    </children>
+
+</AnchorPane>

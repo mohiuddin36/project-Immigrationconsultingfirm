@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tonnidemo.RegisterController"
+            prefHeight="400" prefWidth="600">
+
+    <children>
+
+        <Label text="REGISTER"
+               layoutX="250" layoutY="30"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="nameField"
+                   layoutX="180" layoutY="100"
+                   prefWidth="250"
+                   promptText="Enter Name"/>
+
+        <TextField fx:id="emailField"
+                   layoutX="180" layoutY="150"
+                   prefWidth="250"
+                   promptText="Enter Email"/>
+
+        <PasswordField fx:id="passwordField"
+                       layoutX="180" layoutY="200"
+                       prefWidth="250"
+                       promptText="Enter Password"/>
+
+        <Button text="Register"
+                layoutX="180" layoutY="260"
+                prefWidth="250"
+                onAction="#handleRegister"/>
+
+        <Label fx:id="messageLabel"
+               layoutX="180" layoutY="310"
+               textFill="green"/>
+
+    </children>
+
+</AnchorPane>
