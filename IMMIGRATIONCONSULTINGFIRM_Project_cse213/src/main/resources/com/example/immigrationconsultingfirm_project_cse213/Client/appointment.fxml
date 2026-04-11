@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Client.controllers.AppointmentController">
+   <children>
+      <Label alignment="CENTER" layoutX="203.0" layoutY="33.0" prefHeight="27.0" prefWidth="177.0" text="Book Appointment">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="MessageLabel" layoutX="114.0" layoutY="224.0" prefHeight="27.0" prefWidth="341.0" />
+      <Label layoutX="110.0" layoutY="83.0" text="Service Type:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="110.0" layoutY="120.0" prefHeight="17.0" prefWidth="75.0" text="Date:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="109.0" layoutY="154.0" prefHeight="17.0" prefWidth="75.0" text="Time Slot: ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="ServiceTypeComboBox" layoutX="194.0" layoutY="79.0" prefHeight="25.0" prefWidth="253.0" />
+      <ComboBox fx:id="TimeSlotComboBox" layoutX="194.0" layoutY="150.0" prefHeight="25.0" prefWidth="253.0" />
+      <DatePicker fx:id="AppointmentDatePicker" layoutX="194.0" layoutY="116.0" prefHeight="25.0" prefWidth="253.0" />
+      <Button layoutX="318.0" layoutY="187.0" mnemonicParsing="false" onAction="#BookAppointmentOnClickButton" text="Book Appointment">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TableView fx:id="BookAppointmentTableView" layoutX="35.0" layoutY="258.0" prefHeight="128.0" prefWidth="529.0">
+        <columns>
+          <TableColumn fx:id="ServiceTypeTableColumn" prefWidth="139.33331298828125" text="Service Type" />
+          <TableColumn fx:id="DateTableColumn" prefWidth="124.00003051757812" text="Date" />
+            <TableColumn fx:id="TimeTableColumn" prefWidth="126.0" text="Time" />
+            <TableColumn fx:id="StatusTableColumn" prefWidth="140.666748046875" text="Status" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

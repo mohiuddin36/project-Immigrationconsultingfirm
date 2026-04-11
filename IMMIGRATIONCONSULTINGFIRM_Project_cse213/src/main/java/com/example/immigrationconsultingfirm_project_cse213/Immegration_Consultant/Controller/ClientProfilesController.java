@@ -1,6 +1,6 @@
 package com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Controller;
 //import com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.PaymentRecord;
-import com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.AppendableObjectOutputStream;
+import com.example.immigrationconsultingfirm_project_cse213.Finance_Officer.Model.AppendableObjectOutputStream;
 import com.example.immigrationconsultingfirm_project_cse213.HelloApplication;
 import com.example.immigrationconsultingfirm_project_cse213.Immegration_Consultant.Model.ClientProfiles;
 import javafx.event.ActionEvent;
@@ -41,7 +41,7 @@ public class ClientProfilesController
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Immegration Consultant/immegrationConsultantDashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Client Profile");
+        stage.setTitle("Immigration Consultant Dashboard");
         stage.setScene(scene);
         stage.show();
     }

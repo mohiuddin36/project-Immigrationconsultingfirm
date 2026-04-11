@@ -2,20 +2,27 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.AppointmentCoordinator.RescheduleAppointment">
    <children>
-      <ButtonBar layoutX="61.0" layoutY="170.0" prefHeight="40.0" prefWidth="200.0">
-        <buttons>
-          <Button mnemonicParsing="false" text="Button" />
-            <Label text="Label" />
-        </buttons>
-      </ButtonBar>
-      <Button layoutX="392.0" layoutY="210.0" mnemonicParsing="false" text="Button" />
-      <ComboBox layoutX="140.0" layoutY="45.0" prefWidth="150.0" />
-      <DatePicker layoutX="133.0" layoutY="95.0" />
-      <Label layoutX="93.0" layoutY="62.0" text="Label" />
-      <Label layoutX="55.0" layoutY="112.0" text="Label" />
+      <ButtonBar layoutX="61.0" layoutY="170.0" prefHeight="40.0" prefWidth="200.0" />
+      <DatePicker fx:id="newdatepicker" layoutX="191.0" layoutY="265.0" />
+      <Label layoutX="119.0" layoutY="5.0" />
+      <Label layoutX="113.0" layoutY="14.0" prefHeight="34.0" prefWidth="302.0" text="Reshedule Appointment">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+    <Button fx:id="savebtn" layoutX="117.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleSaveChanges" text="save changes" />
+      <Label layoutX="89.0" layoutY="269.0" />
+      <Label layoutX="119.0" layoutY="269.0" text="New date" />
+      <TableView fx:id="Appointmenttableview" layoutX="92.0" layoutY="71.0" prefHeight="136.0" prefWidth="443.0">
+        <columns>
+          <TableColumn fx:id="namecol" prefWidth="151.1999969482422" text="Name" />
+          <TableColumn fx:id="datecol" prefWidth="171.2" text="Date" />
+            <TableColumn fx:id="IdCol" prefWidth="119.99998779296874" text="Id" />
+        </columns>
+      </TableView>
+      <Label fx:id="messagelabel" layoutX="431.0" layoutY="269.0" prefHeight="74.0" prefWidth="102.0" text="Show message" />
    </children>
 </AnchorPane>

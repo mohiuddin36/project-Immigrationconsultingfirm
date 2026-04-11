@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.Client.controllers.NotificationsController">
+   <children>
+      <Label alignment="CENTER" layoutX="222.0" layoutY="41.0" prefHeight="28.0" prefWidth="151.0" text="Notifications">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="NotificationTableView" layoutX="27.0" layoutY="86.0" prefHeight="220.0" prefWidth="546.0">
+        <columns>
+          <TableColumn fx:id="SubjectTableColumn" prefWidth="106.0" text="Subject" />
+          <TableColumn fx:id="TypeTableColumn" prefWidth="109.33328247070312" text="Type" />
+            <TableColumn fx:id="StatusTableColumn" prefWidth="112.00006103515625" text="Status" />
+            <TableColumn fx:id="DateTableColumn" prefWidth="109.99993896484375" text="Date" />
+            <TableColumn fx:id="SenderTableColumn" prefWidth="107.3333740234375" text="Sender" />
+        </columns>
+      </TableView>
+      <Button layoutX="457.0" layoutY="319.0" mnemonicParsing="false" onAction="#ViewDetailsOnClickButton" prefHeight="25.0" prefWidth="115.0" text="View Details">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
