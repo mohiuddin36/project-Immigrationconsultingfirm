@@ -23,12 +23,14 @@
             <Font name="System Bold Italic" size="29.0" />
          </font>
       </Label>
-      <ComboBox layoutX="42.0" layoutY="217.0" prefWidth="150.0" promptText="Avaialable Consult:" />
+      <ComboBox fx:id="AvaialableConsultcombo" layoutX="170.0" layoutY="210.0" prefWidth="150.0" />
       <TableView fx:id="Consultanttableview" layoutX="47.0" layoutY="266.0" prefHeight="200.0" prefWidth="246.0">
         <columns>
           <TableColumn fx:id="ConsultantNamecol" prefWidth="106.40000915527344" text="Consultant Name" />
           <TableColumn fx:id="AvailableDateCol" prefWidth="138.4" text="Avaialable Date" />
         </columns>
       </TableView>
+      <Label fx:id="messagelabel" layoutX="370.0" layoutY="431.0" prefHeight="43.0" prefWidth="150.0" text="show message" />
+      <Label layoutX="53.0" layoutY="214.0" text="Avaialable Consult:" />
    </children>
 </AnchorPane>

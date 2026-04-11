@@ -16,11 +16,13 @@
     <Button fx:id="savebtn" layoutX="117.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleSaveChanges" text="save changes" />
       <Label layoutX="89.0" layoutY="269.0" />
       <Label layoutX="119.0" layoutY="269.0" text="New date" />
-      <TableView fx:id="Appointmenttableview" layoutX="92.0" layoutY="71.0" prefHeight="136.0" prefWidth="323.0">
+      <TableView fx:id="Appointmenttableview" layoutX="92.0" layoutY="71.0" prefHeight="136.0" prefWidth="443.0">
         <columns>
           <TableColumn fx:id="namecol" prefWidth="151.1999969482422" text="Name" />
           <TableColumn fx:id="datecol" prefWidth="171.2" text="Date" />
+            <TableColumn fx:id="IdCol" prefWidth="119.99998779296874" text="Id" />
         </columns>
       </TableView>
+      <Label fx:id="messagelabel" layoutX="431.0" layoutY="269.0" prefHeight="74.0" prefWidth="102.0" text="Show message" />
    </children>
 </AnchorPane>
