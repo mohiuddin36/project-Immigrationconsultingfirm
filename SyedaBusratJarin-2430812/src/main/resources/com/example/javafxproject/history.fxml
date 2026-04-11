@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.javafxproject.HistoryController"
+            prefHeight="450.0" prefWidth="650.0">
+
+    <children>
+
+        <Label text="HISTORY"
+               layoutX="270" layoutY="20"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+        <TableView fx:id="historyTable"
+                   layoutX="50" layoutY="70"
+                   prefWidth="550" prefHeight="300">
+
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="110"/>
+                <TableColumn fx:id="serviceColumn" text="Service" prefWidth="110"/>
+                <TableColumn fx:id="dateColumn" text="Date" prefWidth="110"/>
+                <TableColumn fx:id="timeColumn" text="Time" prefWidth="110"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="110"/>
+            </columns>
+
+        </TableView>
+
+        <!-- Previous Button -->
+        <Button text="Previous"
+                layoutX="50"
+                layoutY="390"
+                prefWidth="120"
+                onAction="#goBack"/>
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.javafxproject.CancelBookingController"
+            prefHeight="450.0" prefWidth="650.0">
+
+    <children>
+
+        <Label text="CANCEL BOOKING"
+               layoutX="220" layoutY="20"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+        <!-- Table -->
+        <TableView fx:id="bookingTable"
+                   layoutX="50" layoutY="70"
+                   prefWidth="550" prefHeight="250">
+
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="110"/>
+                <TableColumn fx:id="phoneColumn" text="Phone" prefWidth="110"/>
+                <TableColumn fx:id="serviceColumn" text="Service" prefWidth="110"/>
+                <TableColumn fx:id="dateColumn" text="Date" prefWidth="110"/>
+                <TableColumn fx:id="timeColumn" text="Time" prefWidth="110"/>
+            </columns>
+
+        </TableView>
+
+        <!-- Cancel Button -->
+        <Button text="Cancel Booking"
+                layoutX="220"
+                layoutY="350"
+                prefWidth="150"
+                onAction="#cancelBooking"/>
+
+        <!-- Previous Button -->
+        <Button text="Previous"
+                layoutX="50"
+                layoutY="350"
+                prefWidth="120"
+                onAction="#goBack"/>
+
+    </children>
+</AnchorPane>
