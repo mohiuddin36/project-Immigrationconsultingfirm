@@ -21,11 +21,11 @@ public class BookServiceController {
     @FXML
     public void initialize() {
         serviceCombo.getItems().addAll(
-                "Cleaning",
-                "Repair",
-                "Plumbing",
-                "Electrical",
-                "AC Service"
+                "Student Visa Processing",
+                "Work Permit Application",
+                "Tourist Visa Assistance",
+                "Immigration Consultation",
+                "Document Verification Service"
         );
     }
 
