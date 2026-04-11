@@ -17,6 +17,9 @@ public class Appointment {
         this.status = status;
     }
 
+    public Appointment(String clientA, String consultantX, LocalDate now) {
+    }
+
     public String getAppointmentId() { return appointmentId; }
     public String getServiceType() { return serviceType; }
     public LocalDate getDate() { return date; }
@@ -38,5 +41,9 @@ public class Appointment {
                 ", time='" + time + '\'' +
                 ", status='" + status + '\'' +
                 '}';
+    }
+
+
+    public Object getConsultant() {
     }
 }

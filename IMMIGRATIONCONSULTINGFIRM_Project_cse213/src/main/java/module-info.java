@@ -5,6 +5,7 @@ module com.example.immigrationconsultingfirm_project_cse213 {
     requires javafx.graphics;
     requires java.management;
     requires java.desktop;
+    requires java.xml.crypto;
     //requires com.example.immigrationconsultingfirm_project_cse213;
 
 
