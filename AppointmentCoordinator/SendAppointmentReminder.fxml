@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.AppointmentCoordinator.SendAppointmentReminder">
+   <children>
+      <Label layoutX="139.0" layoutY="27.0" prefHeight="27.0" prefWidth="270.0" text="Send Appointment Reminder">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="AppointmentTableview" layoutX="57.0" layoutY="136.0" prefHeight="200.0" prefWidth="229.0">
+        <columns>
+          <TableColumn fx:id="IDCol" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="NameCol" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="DateCol" prefWidth="75.0" text="Date" />
+        </columns>
+      </TableView>
+      <Button fx:id="ReminderButton" layoutX="346.0" layoutY="151.0" mnemonicParsing="false" onAction="#handleSendReminder" text="Send Reminder" />
+      <DatePicker fx:id="TodayDatePicker" layoutX="40.0" layoutY="75.0" />
+   </children>
+</AnchorPane>

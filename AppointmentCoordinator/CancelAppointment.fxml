@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.AppointmentCoordinator.CancelAppoinment">
+   <children>
+      <Button fx:id="CancelSelectedButton" layoutX="259.0" layoutY="146.0" mnemonicParsing="false" onAction="#handleCancelSelectedButton" text="Cancel Selected" />
+      <Label layoutX="201.0" layoutY="18.0" prefHeight="26.0" prefWidth="182.0" text="Cancel Appointment">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+      <TableView fx:id="clientinformationTableView" layoutX="14.0" layoutY="59.0" onSort="#appointmentTable" prefHeight="200.0" prefWidth="214.0">
+        <columns>
+          <TableColumn fx:id="ColID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="Namecol" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="DateCol" prefWidth="75.0" text="Date" />
+        </columns>
+      </TableView>
+      <TextArea fx:id="CancelreasonTextArea" layoutX="14.0" layoutY="272.0" prefHeight="94.0" prefWidth="214.0" text="Cancel reason&#10;" />
+      <Button fx:id="ConfirmCancelletion" layoutX="283.0" layoutY="294.0" mnemonicParsing="false" onAction="#handleconfirmcancellation" text="Confirm Cancellation" />
+      <Label fx:id="mrssagelabel" layoutX="400.0" layoutY="211.0" prefHeight="51.0" prefWidth="150.0" text="Show message" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.immigrationconsultingfirm_project_cse213.AppointmentCoordinator.ViewAppointmentRequests">
+   <children>
+      <Label layoutX="40.0" layoutY="14.0" prefHeight="62.0" prefWidth="438.0" text="New Appointment Request">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Label>
+      <TableView fx:id="RequestlistTableView" layoutX="25.0" layoutY="111.0" prefHeight="106.0" prefWidth="454.0">
+        <columns>
+          <TableColumn prefWidth="430.40001220703124" text="Request List" />
+        </columns>
+      </TableView>
+      <TableView fx:id="clientinformatioTableView" layoutX="27.0" layoutY="245.0" prefHeight="99.0" prefWidth="438.0">
+        <columns>
+          <TableColumn fx:id="NameCol" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="contactCol" prefWidth="75.0" text="Contact" />
+            <TableColumn fx:id="reasonCol" prefWidth="287.1999877929687" text="reason" />
+        </columns>
+      </TableView>
+      <Button fx:id="requestButton" layoutX="478.0" layoutY="295.0" mnemonicParsing="false" onAction="#handleSelectRequest" text="Select Request" />
+   </children>
+</AnchorPane>
