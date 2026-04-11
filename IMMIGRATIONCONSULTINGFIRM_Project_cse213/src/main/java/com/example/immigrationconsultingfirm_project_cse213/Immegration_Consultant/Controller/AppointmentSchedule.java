@@ -19,7 +19,6 @@ import java.io.ObjectOutputStream;
 
 import java.io.Serializable;
 
-import static jdk.internal.agent.Agent.getText;
 
 public class AppointmentSchedule implements Serializable {
 
@@ -35,6 +34,9 @@ public class AppointmentSchedule implements Serializable {
     @javafx.fxml.FXML
     public void initialize() {
 
+    }
+
+    public AppointmentSchedule() {
     }
 
     @javafx.fxml.FXML
@@ -57,8 +59,6 @@ public class AppointmentSchedule implements Serializable {
                //passwordTextfield.getText(),
                 //appoinmentTypeComboBox.getValue(),
 
-
-              );
 
 
         try {

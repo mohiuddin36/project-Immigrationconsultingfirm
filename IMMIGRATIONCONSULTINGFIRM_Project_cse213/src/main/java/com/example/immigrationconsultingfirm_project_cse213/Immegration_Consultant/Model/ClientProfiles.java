@@ -6,6 +6,9 @@ public class ClientProfiles implements Serializable {
     protected String name, email, address, nationality;
     protected int passportNo, contactInfo;
 
+    public ClientProfiles() {
+    }
+
     public ClientProfiles(String name, String email, String address, String nationality, int passportNo, int contactInfo) {
         this.name = name;
         this.email = email;

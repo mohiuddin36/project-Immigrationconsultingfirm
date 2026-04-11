@@ -19,6 +19,12 @@ public class CashForecast implements Serializable {
         this.username = username;
     }
 
+    public CashForecast(String username, String password, LocalDate applicationDeadlines) {
+        this.username = username;
+        this.password = password;
+        this.applicationDeadlines = applicationDeadlines;
+    }
+
     @Override
     public String toString() {
         return "CashForecast{" +

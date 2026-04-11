@@ -79,5 +79,3 @@ public class VisaRuleCheck
         a.showAndWait();
     }
 }
-    }
-}
