@@ -11,7 +11,8 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                HelloApplication.class.getResource("Immegration Consultant/clientProfiles.fxml")
+                HelloApplication.class.getResource(
+                        "/com/example/immigrationconsultingfirmprojectcse213/Documentation/AddClient.fxml")
         );
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
